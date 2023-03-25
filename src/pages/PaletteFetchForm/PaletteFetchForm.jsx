@@ -3,7 +3,6 @@ import "./PaletteFetchForm.css";
 
 export default function PaletteFetchForm() {
     const [colorList, setColorList] = useState([]);
-    const [results, setResults] = useState([]);
 
     const handleSubmit = async (evt) => {
         evt.preventDefault();
@@ -16,7 +15,8 @@ export default function PaletteFetchForm() {
             body: JSON.stringify(data),
         });
         const colors = await response.json();
-        setResults(colors.result);
+        //using above colors variable colors.result, result is being passed from the JSON body. 
+        setColorList(colors.result);
         console.log(colors);
     }
 
@@ -24,7 +24,7 @@ export default function PaletteFetchForm() {
     return (
         <>
             <div className="palette">
-                {results.map((color, idx) => (
+                {colorList.map((color, idx) => (
                     <div key={idx} className="palette-item" style={{ backgroundColor: `rgb(${color})`}}></div>
                 ))}
             </div>

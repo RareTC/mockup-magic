@@ -6,17 +6,17 @@ import AuthPage from '../AuthPage/AuthPage';
 import MockUpPage from '../MockUpPage/MockUpPage';
 import SavedPalettesPage from '../SavedPalettesPage/SavedPalettesPage';
 import NavBar from '../../components/NavBar/NavBar';
-import PaletteFetchForm from '../../components/PaletteFetchForm/PaletteFetchForm';
+import PaletteFetchForm from '../PaletteFetchForm/PaletteFetchForm';
 
 export default function App() {
   const [user, setUser] = useState(getUser());
 
   return (
     <main className="App">
-      <NavBar user={user} setUser={setUser} />
-      <PaletteFetchForm />
       { user ?
           <>
+          <NavBar user={user} setUser={setUser} />
+          <PaletteFetchForm />
             <Routes>
               {/* Route components in here */}
               <Route path="" element={<MockUpPage />} />
