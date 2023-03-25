@@ -1,23 +1,17 @@
 import { useState } from 'react';
 import "./PaletteFetchForm.css";
+import * as palettesAPI from '../../utilities/palettes-api'
 
 export default function PaletteFetchForm() {
     const [colorList, setColorList] = useState([]);
 
-    const handleSubmit = async (evt) => {
+    function handleSubmit(evt) {
         evt.preventDefault();
-        const url = `http://colormind.io/api/`;
-        const data = {
-            model: 'default'
-        };
-        const response = await fetch(url,  {
-            method: 'POST',
-            body: JSON.stringify(data),
-        });
-        const colors = await response.json();
-        //using above colors variable colors.result, result is being passed from the JSON body. 
-        setColorList(colors.result);
-        console.log(colors);
+        async function fetchColors(evt) {
+            const newPalette = await palettesAPI.fetchColors(evt) 
+            setColorList(newPalette.result);
+        }
+        fetchColors(evt);
     }
 
 

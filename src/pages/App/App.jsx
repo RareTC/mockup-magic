@@ -15,8 +15,8 @@ export default function App() {
     <main className="App">
       { user ?
           <>
-          <NavBar user={user} setUser={setUser} />
-          <PaletteFetchForm />
+            <NavBar user={user} setUser={setUser} />
+            <PaletteFetchForm />
             <Routes>
               {/* Route components in here */}
               <Route path="" element={<MockUpPage />} />
