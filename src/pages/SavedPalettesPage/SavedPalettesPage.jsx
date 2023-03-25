@@ -5,7 +5,7 @@ export default function OrderHistoryPage() {
 
   return (
     <>
-    <h1>OrderHistoryPage</h1>
+    <h1>Saved Palettes</h1>
     </>
   );
 }
