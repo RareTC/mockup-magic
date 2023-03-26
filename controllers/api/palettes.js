@@ -2,6 +2,7 @@ const Palette = require('../../models/palette');
 
 module.exports = {
     fetchColors,
+    // create,
 }
 
 async function fetchColors(req, res) {
@@ -22,3 +23,7 @@ async function fetchColors(req, res) {
         res.status(400).json(err);
     }
 }
+
+// async function create(req, res) {
+//     const savedPalette = await Palette.
+// }

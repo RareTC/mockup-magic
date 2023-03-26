@@ -14,18 +14,35 @@ export default function PaletteFetchForm() {
         fetchColors(evt);
     }
 
+    function handleSavePalette() {
+        
+    }
 
+    const backgroundGradient = `radial-gradient(
+        circle at 50% 100%, 
+        rgb(${colorList[0]}) 19.9%, 
+        rgb(${colorList[1]}) 35.9%, 
+        rgb(${colorList[2]}) 24.5%
+    )`;
+    
     return (
         <>
             <div className="palette">
                 {colorList.map((color, idx) => (
                     <div key={idx} className="palette-item" style={{ backgroundColor: `rgb(${color})`}}></div>
                 ))}
+                <form onSubmit={handleSubmit}>
+                    <button type="submit">Generate Palette</button>
+                </form>
+                <form onSubmit={handleSavePalette}>
+                    <button type="submit">Save Palette</button>
+                </form>
             </div>
 
-            <form onSubmit={handleSubmit}>
-                <button type="submit">Generate Palette</button>
-            </form>
+            <section 
+            style={{ background: backgroundGradient, backgroundSize: '100% 100%' }}
+            >
+            </section>
         </>
     )
 }
