@@ -8,5 +8,7 @@ const palettesCtrl = require('../../controllers/api/palettes');
 //POST to create note
 router.post('/', palettesCtrl.fetchColors);
 
+router.post('/save', ensureLoggedIn, palettesCtrl.savePalette)
+
 
 module.exports = router;

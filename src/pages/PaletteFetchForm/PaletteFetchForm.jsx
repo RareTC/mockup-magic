@@ -14,8 +14,15 @@ export default function PaletteFetchForm() {
         fetchColors(evt);
     }
 
-    function handleSavePalette() {
-        
+    async function handleSavePalette(evt) {
+        evt.preventDefault();
+        try {
+            const paletteColors = { colors: colorList };
+            const savedPalette = await palettesAPI.savePalette(paletteColors)
+            alert(savedPalette, 'saved!')
+        } catch(err) {
+            console.error('error saving palette' , err)
+        }
     }
 
     const backgroundGradient = `radial-gradient(
