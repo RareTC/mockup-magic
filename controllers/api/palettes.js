@@ -6,26 +6,19 @@ module.exports = {
     getAllForUser
 }
 
-// async function getAllForUser(req, res) {
-//     try {
-//         const palettes = await Palette.find({user: req.user._id}).sort('createdAt');
-//         res.json(palettes);
-//         console.log(palettes)
-//     } catch (err){
-//         res.status(400).json(err)
-//     }
-// }
+
+//Can make this function wrap my model in another array instead of hard coding a nested array into the model. 
 
 async function getAllForUser(req, res) {
     try {
         const palettes = await Palette.find({user: req.user._id}).sort('createdAt');
         const paletteData = palettes.map((palette) => {
             return { 
-                id: palette._id,
                 colors: palette.colors,
                 createdAt: palette.createdAt
             };
         });
+        console.log(paletteData)
         res.json(paletteData);
     } catch (err) {
         res.status(400).json(err);
