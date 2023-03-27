@@ -2,10 +2,7 @@ const mongoose = require('mongoose');
 const Schema = mongoose.Schema;
 
 const paletteSchema = new Schema({
-    colors: {
-      type: Object,
-      required: true,
-    },
+    colors: [[Number]],
     user: {
       type: Schema.Types.ObjectId,
       ref: "User",

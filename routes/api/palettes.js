@@ -3,12 +3,12 @@ const router = express.Router();
 const ensureLoggedIn = require('../../config/ensureLoggedIn');
 const palettesCtrl = require('../../controllers/api/palettes');
 
-// router.get('/', ensureLoggedIn, notesCtrl.index);
-
 //POST to create note
 router.post('/', palettesCtrl.fetchColors);
 
 router.post('/save', ensureLoggedIn, palettesCtrl.savePalette)
+
+router.get('/saved', ensureLoggedIn, palettesCtrl.getAllForUser)
 
 
 module.exports = router;

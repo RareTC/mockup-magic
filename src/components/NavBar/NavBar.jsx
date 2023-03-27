@@ -13,7 +13,9 @@ export default function NavBar({ user, setUser }) {
       <img className="logo" src={logo} alt="Rabbit In Magician Hat Logo" />
       <Link to="">Home</Link>
       &nbsp; | &nbsp;
-      <Link to="">Saved Palettes</Link>
+      <Link to="/mockup">Mockups</Link>
+      &nbsp; | &nbsp;
+      <Link to="/saved">Saved Palettes</Link>
       &nbsp;&nbsp;
       <span>Welcome, {user.name}</span>
       &nbsp;&nbsp;<Link to="" onClick={handleLogOut}>Log Out</Link>

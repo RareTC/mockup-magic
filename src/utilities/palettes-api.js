@@ -9,3 +9,6 @@ export async function savePalette(savedPalette) {
     return sendRequest(`${BASE_URL}/save`, 'POST', savedPalette)
 }
 
+export function getAllForUser() {
+    return sendRequest(`${BASE_URL}/saved`);
+}

@@ -1,0 +1,12 @@
+.saved-palette {
+    display: flex; 
+    justify-content: space-between;
+    margin-right: 30px;
+}
+
+.palette-item {
+    width: 20px;
+    height: 20px;
+    border: solid;
+}
+
