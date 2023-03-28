@@ -5,7 +5,7 @@ export default function SavedPalette({ myPalettes }) {
   return (
     <div className="saved-palette">
       {myPalettes.colors.map((color, idx) => (
-        <div key={idx} className="palette-item" style={{ backgroundColor: `rgb(${color})` }}></div>
+        <div key={idx} className="palette-item" style={{ backgroundColor: `${color}` }}></div>
       ))}
     </div>
   );

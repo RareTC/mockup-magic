@@ -12,6 +12,7 @@ export default function SavedPalettesPage() {
       try {
         const palettes = await palettesAPI.getAllForUser();
         setSavedPalettes(palettes);
+        console.log(palettes, "useEffect Palette from savedList")
         console.log(palettes)
       } catch (err) {
         console.log(err , "there is an error form the db")
@@ -20,7 +21,6 @@ export default function SavedPalettesPage() {
     getSavedPalettes();
   }, []);
 
-  
   return (
     <>
     <div>

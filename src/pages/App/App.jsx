@@ -16,7 +16,6 @@ export default function App() {
       { user ?
           <>
             <NavBar user={user} setUser={setUser} />
-            <PaletteFetchForm />
             <Routes>
               {/* Route components in here */}
               <Route path="/mockup" element={<MockUpPage />} />

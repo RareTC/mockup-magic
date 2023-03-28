@@ -4,7 +4,7 @@ const ensureLoggedIn = require('../../config/ensureLoggedIn');
 const palettesCtrl = require('../../controllers/api/palettes');
 
 //POST to create note
-router.post('/', palettesCtrl.fetchColors);
+router.post('/', palettesCtrl.generatePalette);
 
 router.post('/save', ensureLoggedIn, palettesCtrl.savePalette)
 

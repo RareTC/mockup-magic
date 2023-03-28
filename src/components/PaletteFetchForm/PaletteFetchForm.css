@@ -10,3 +10,12 @@
     height: 20px;
     border: solid;
 }
+
+.palette-generator {
+    height: 70px;
+    width: 70px;
+    margin: -4px;
+    padding: 0;
+    background-color: transparent;
+    border: none;
+}
