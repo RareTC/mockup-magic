@@ -22,6 +22,15 @@ export default function PaletteFetchForm({ setActivePalette }) {
         setActivePalette(palette)
     }, [palette])
 
+    useEffect(() => {
+        async function getPalettes() {
+            const palettes = await palettesAPI.getAllForUser();
+            setPalettes(palettes);
+            if (palettes.length) setPalette(palettes[0]);
+        } 
+        getPalettes();
+    }, []);
+
     async function generatePalette() {
         const palette = await palettesAPI.generatePalette();
         const newColors = palette.colors.map(c => `#${c[0].toString(16)}${c[1].toString(16)}${c[2].toString(16)}`);
