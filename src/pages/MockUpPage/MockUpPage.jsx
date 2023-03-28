@@ -1,8 +1,10 @@
 import './MockUpPage.css';
 import { useState } from 'react';
-import PaletteFetchForm from '../../components/PaletteFetchForm/PaletteFetchForm';
+import PaletteForm from '../../components/PaletteForm/PaletteForm';
 
 export default function MockUpPage() {
+
+    const [activePalette, setActivePalette] = useState(null);
     const [backgroundGradient, setBackgroundGradient] = useState('');
 
     // style the background
@@ -19,10 +21,11 @@ export default function MockUpPage() {
 
     return (
       <>
-          <PaletteFetchForm  handleFetchColors={handleFetchColors} />
+          <PaletteForm  setActivePalette={setActivePalette} />
           <section style={{ background: backgroundGradient, backgroundSize: '100% 100%' }}>
             MOCKUP PAGE 
           </section>
+          <select name="" id=""></select>
       </>
   )
 }

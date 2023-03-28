@@ -1,8 +1,8 @@
 const mongoose = require('mongoose');
 const Schema = mongoose.Schema;
 
-
 const paletteSchema = new Schema({
+  title: String,
   colors: [String],
   user: {
     type: Schema.Types.ObjectId,
@@ -13,15 +13,4 @@ const paletteSchema = new Schema({
   timestamps: true,
 });
 
-const myPaletteSchema = new Schema ({
-  myPalettes : [paletteSchema],
-  user: {
-    type: Schema.Types.ObjectId,
-    ref: "User",
-    required: true,
-  }, 
-}, {
-    timestamps: true,
-});
-
-module.exports = mongoose.model('Palette', myPaletteSchema);
+module.exports = mongoose.model('Palette', paletteSchema);
