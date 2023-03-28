@@ -10,10 +10,15 @@ export default function SavedPalettesPage() {
   useEffect(() => {
     async function getSavedPalettes() {
       try {
-        const palettes = await palettesAPI.getAllForUser();
-        setSavedPalettes(palettes);
-        console.log(palettes, "useEffect Palette from savedList")
-        console.log(palettes)
+        const myPalettes = await palettesAPI.getAllForUser();
+        console.log(myPalettes, 'myPalettes')
+        const palette = myPalettes.map((colors => {
+          // return colors.palette.map(singleColor => {
+            // return singleColor
+          // })
+        }))
+        // console.log(singleColor, "mapped palette")
+        setSavedPalettes(palette);
       } catch (err) {
         console.log(err , "there is an error form the db")
       }

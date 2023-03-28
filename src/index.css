@@ -1,15 +1,4 @@
 /* CSS Custom Properties */
-.navbar {
-  display: flex;
-  justify-content: space-around;
-  border: solid;
-  align-items: center;
-}
-
-.logo {
-  width: 200px;
-}
-
 body {
   margin: 10;
   padding: 2vmin;

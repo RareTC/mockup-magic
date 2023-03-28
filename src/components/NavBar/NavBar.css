@@ -1,0 +1,41 @@
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    border: solid;
+    align-items: center;
+}
+
+
+.logo {
+    width: 200px;
+    margin-left: 25px;;
+}
+
+.link-ul li {
+    display: inline-block;
+    list-style-type: none;
+    margin-right: 20px;
+    text-decoration: none;
+}
+
+.user-ul {
+    text-decoration: none;
+    list-style-type: none;
+    margin-bottom: 5px;
+}
+
+.userinfo {
+    padding-left: 0px;
+    padding-right: 25px;
+}
+
+.userFeatureNav {
+    display: flex;
+    align-items: center;
+}
+
+a:-webkit-any-link {
+    color: #fefefe;
+    cursor: pointer;
+    text-decoration: none;
+}
