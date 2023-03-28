@@ -53,7 +53,6 @@ export default function PaletteFetchForm({ setActivePalette }) {
         setPalette({...palette, colors: updatedColors});
     }
 
-
     if (!palette) return null;
     
     return (
@@ -72,6 +71,11 @@ export default function PaletteFetchForm({ setActivePalette }) {
                 <input type="text" value={palette?.title} onChange={(evt) => setPalette({...palette, title: evt.target.value})}/>
                 <button type="submit">Save Palette</button>
             </form>
+            <select value={palette._id} onChange={(evt)=> setPalette(palettes.find(p => p._id === evt.target.value))} >
+                {
+                    palettes.map(p => <option value={p._id}>{p.title}</option>)
+                }
+            </select>
         </div >
     )
 }
