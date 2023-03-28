@@ -4,7 +4,7 @@ import { getUser } from '../../utilities/users-service';
 import './App.css';
 import AuthPage from '../AuthPage/AuthPage';
 import MockUpPage from '../MockUpPage/MockUpPage';
-import SavedPalettesPage from '../SavedPalettesPage/SavedPalettesList';
+import SavedPalettesPage from '../SavedPalettesListPage/SavedPalettesList';
 import NavBar from '../../components/NavBar/NavBar';
 import PaletteFetchForm from '../../components/PaletteFetchForm/PaletteFetchForm';
 

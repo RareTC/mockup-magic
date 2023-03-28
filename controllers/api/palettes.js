@@ -6,19 +6,17 @@ module.exports = {
     getAllForUser
 }
 
-
-//Can make this function wrap my model in another array instead of hard coding a nested array into the model. 
-
 async function getAllForUser(req, res) {
     try {
-        const palettes = await Palette.find({user: req.user._id}).sort('createdAt');
-        const paletteData = palettes.map((palette) => {
+        const myPalettes = await myPalette.find({user: req.user._id}).sort('createdAt');
+        const savedPalettes = myPalettes.map(myPalette => myPalette.myPalettes)
+        const paletteData = savedPalettes.map((palette) => {
             return { 
                 colors: palette.colors,
                 createdAt: palette.createdAt
             };
         });
-        console.log(paletteData)
+        console.log(paletteData, "this is the console form the getALl for user")
         res.json(paletteData);
     } catch (err) {
         res.status(400).json(err);
@@ -36,9 +34,9 @@ async function fetchColors(req, res) {
             body: JSON.stringify(data),
         });
         const colors = await response.json();
-        res.json(colors)
+        res.json(colors.result)
         //using above colors variable colors.result, result is being passed from the JSON body. 
-        console.log(colors, "from the api");
+        console.log(colors.result, "from the api");
     } catch (err) {
         res.status(400).json(err);
     }
@@ -46,17 +44,17 @@ async function fetchColors(req, res) {
 
 async function savePalette(req, res) {
     try {
+        // const colors = req.body.colors;
+        req.body.user = req.user._id
         console.log(req.body, "testing save")
-        const colors = req.body.colors;
-        const user = req.user._id;
-        const palette = new Palette({
-            colors: colors,
-            user: user,
-        });
-        console.log(req.body)
-        await palette.save();
-        res.json(palette);
+        const myPalette = await Palette.findOne({user: req.user._id})
+        myPalette.myPalettes.push(req.body)
+        await myPalette.save()
+        console.log(myPalette)
+        res.json(myPalette);
     } catch(err) {
+        console.log(err)
         res.status(400).json(err);
     }
 }
+

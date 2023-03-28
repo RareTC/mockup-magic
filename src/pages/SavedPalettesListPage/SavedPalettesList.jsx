@@ -27,7 +27,7 @@ export default function SavedPalettesPage() {
       <h1>Saved Palettes</h1>
         <div className="palette">
           {savedPalettes.map((palette, idx) => (
-            <SavedPalette key={idx} colors={palette.colors} />
+            <SavedPalette key={idx} myPalettes={palette.myPalettes} />
             ))}
         </div>
     </div>

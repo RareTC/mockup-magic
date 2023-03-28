@@ -1,9 +1,10 @@
 import './SavedPalette.css';
 
-export default function SavedPalette({ colors }) {
+export default function SavedPalette({ myPalettes }) {
+  console.log(myPalettes)
   return (
     <div className="saved-palette">
-      {colors.map((color, idx) => (
+      {myPalettes.colors.map((color, idx) => (
         <div key={idx} className="palette-item" style={{ backgroundColor: `rgb(${color})` }}></div>
       ))}
     </div>
