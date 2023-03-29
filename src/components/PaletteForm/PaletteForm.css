@@ -10,6 +10,22 @@
     border: solid;
 }
 
+.PaletteForm-PaletteList {
+    display: inline-block;
+    flex-direction: column;
+}
+
+.PaletteForm-icon-btn {
+    background-color: transparent;
+    border: none;
+    height: 30px;
+    width: 30px;
+    font-size: 30px;
+    display: inline-block;
+    margin-left: 5px;
+    margin-right: 5px;
+}
+
 .palette-generator {
     height: 110px;
     width: 160px;

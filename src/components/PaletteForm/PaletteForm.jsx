@@ -1,6 +1,8 @@
 import { useState, useEffect } from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faArrowsRotate } from '@fortawesome/free-solid-svg-icons';
+import { faAnglesRight } from '@fortawesome/free-solid-svg-icons';
+import { faAnglesLeft } from '@fortawesome/free-solid-svg-icons';
 import "./PaletteForm.css";
 import * as palettesAPI from '../../utilities/palettes-api';
 import Select from 'react-select';
@@ -84,16 +86,26 @@ export default function PaletteFetchForm({ setActivePalette }) {
             <button className="generator-btn" onClick={generatePalette}>
                 <span><FontAwesomeIcon icon={faArrowsRotate} /></span>
             </button>
-        </div>
+        </div >
             {palette.colors.map((color, idx) => (
+        <div className="PaletteForm-PaletteList">
                 <input
-                    className="palette-generator"
-                    key={idx}
-                    type="color"
-                    value={color}
-                    onChange={(evt) => handleChange(evt, idx)}
-                />
-            ))}
+                className="palette-generator"
+                key={idx}
+                type="color"
+                value={color}
+                onChange={(evt) => handleChange(evt, idx)}
+                /> 
+                <div className="PaletteForm-icons">
+                    <button className="PaletteForm-icon-btn">
+                        <FontAwesomeIcon icon={faAnglesLeft} />
+                    </button>
+                    <button className="PaletteForm-icon-btn">
+                        <FontAwesomeIcon icon={faAnglesRight} />
+                    </button>
+                </div>
+        </div>
+                ))}
             <form onSubmit={handleSavePalette}>
                 <input type="text" value={palette?.title} onChange={(evt) => setPalette({...palette, title: evt.target.value})}/>
                 <button type="submit">Save Palette</button>
@@ -105,7 +117,6 @@ export default function PaletteFetchForm({ setActivePalette }) {
                 onChange={(evt) => setPalette(palettes.find(p => p._id === evt.value))}
                 formatOptionLabel={formatOptionLabel}
             />
-
         </div >
     )
 }
