@@ -15,6 +15,13 @@
     flex-direction: column;
 }
 
+.PaletteForm-icons {
+    display: flex;
+    justify-content: center;
+    text-align: center;
+    margin-right: 15px;
+}
+
 .PaletteForm-icon-btn {
     background-color: transparent;
     border: none;

@@ -78,36 +78,53 @@ export default function PaletteFetchForm({ setActivePalette }) {
         </div>
     ); 
 
+    function swapColors(idx1, idx2) {
+        const paletteCopy = {...palette};
+        paletteCopy.title = 'New Palette';
+        const colors = paletteCopy.colors;
+        [colors[idx1], colors[idx2]] = [colors[idx2], colors[idx1]];
+        setPalette(paletteCopy);
+      }
+    
+
     if (!palette) return null;
     
     return (
         <div>
             <div className="palette">
-            <button className="generator-btn" onClick={generatePalette}>
-                <span><FontAwesomeIcon icon={faArrowsRotate} /></span>
-            </button>
-        </div >
+                <button className="generator-btn" onClick={generatePalette}>
+                    <span><FontAwesomeIcon icon={faArrowsRotate} /></span>
+                </button>
+            </div >
             {palette.colors.map((color, idx) => (
-        <div className="PaletteForm-PaletteList">
-                <input
-                className="palette-generator"
-                key={idx}
-                type="color"
-                value={color}
-                onChange={(evt) => handleChange(evt, idx)}
-                /> 
-                <div className="PaletteForm-icons">
-                    <button className="PaletteForm-icon-btn">
-                        <FontAwesomeIcon icon={faAnglesLeft} />
-                    </button>
-                    <button className="PaletteForm-icon-btn">
-                        <FontAwesomeIcon icon={faAnglesRight} />
-                    </button>
+                <div className="PaletteForm-PaletteList" key={idx} >
+                    <input
+                        className="palette-generator"
+                        key={idx}
+                        type="color"
+                        value={color}
+                        onChange={(evt) => handleChange(evt, idx)}
+                    />
+                    <div className="PaletteForm-icons">
+                        { idx === 0 ?
+                         null
+                          : 
+                        <button className="PaletteForm-icon-btn" onClick={() => swapColors(idx, idx-1)}>
+                            <FontAwesomeIcon icon={faAnglesLeft} />
+                        </button>
+                        }
+                        { idx === 4 ?
+                         null
+                         :
+                        <button className="PaletteForm-icon-btn" onClick={() => swapColors(idx, idx+1)}>
+                            <FontAwesomeIcon icon={faAnglesRight} />
+                        </button>
+                         }
+                    </div>
                 </div>
-        </div>
-                ))}
+            ))}
             <form onSubmit={handleSavePalette}>
-                <input type="text" value={palette?.title} onChange={(evt) => setPalette({...palette, title: evt.target.value})}/>
+                <input type="text" value={palette?.title} onChange={(evt) => setPalette({ ...palette, title: evt.target.value })} />
                 <button type="submit">Save Palette</button>
             </form>
             <Select
