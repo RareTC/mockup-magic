@@ -8,7 +8,7 @@ export default function MockUpPage() {
     const [backgroundGradient, setBackgroundGradient] = useState('');
 
     // style the background
-    function handleFetchColors(updatedColors) {
+    function handleActivePalette(updatedColors) {
       console.log(updatedColors,'handle fetch in mockup')
       const backgroundGradient = `radial-gradient(
           circle at 50% 100%, 
@@ -25,7 +25,6 @@ export default function MockUpPage() {
           <section style={{ background: backgroundGradient, backgroundSize: '100% 100%' }}>
             MOCKUP PAGE 
           </section>
-          <select name="" id=""></select>
       </>
   )
 }
