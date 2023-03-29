@@ -3,8 +3,17 @@ const Palette = require('../../models/palette');
 module.exports = {
     generatePalette,
     savePalette, 
-    getAllForUser
+    getAllForUser,
+    // edit,
 }
+
+// function edit(req, res) {
+//     Palette.findOne({'palettes._id': req.params.id}), function(err, palette) {
+//         const editPalette = palette.id(req.params.id)
+//         console.log(ediPalette, ' testing this function in edit ')
+//     }
+// }
+
 
 async function getAllForUser(req, res) {
     try {
@@ -46,25 +55,3 @@ async function savePalette(req, res) {
         res.status(400).json(err);
     }
 }
-
-
-// async function savePalette(req, res) {
-//     try {
-//         const colors = req.body.colors;
-//         const user = req.user._id
-//         console.log(req.body, "testing save")
-//         // const colors = await Palette.findOne({user: req.user._id})
-//         const palette = new Palette({
-//             colors: colors,
-//             user: user,
-//         })
-//         // myPalette.myPalettes.push(req.body)
-//         await palette.save()
-//         console.log(palette, 'testing backend save after function runs')
-//         res.json(palette);
-//     } catch(err) {
-//         console.log(err)
-//         res.status(400).json(err);
-//     }
-// }
-

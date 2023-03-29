@@ -6,13 +6,14 @@ import * as palettesAPI from '../../utilities/palettes-api';
 import Select from 'react-select';
 
 const defaultPalette = {
+    _id: 'defaultid',
     title: 'default',
     colors: [
-        '#ff0000',
-        '#00ff00',
-        '#0000ff',
-        '#ffffff',
-        '#000000',
+        '#2233a4',
+        '#38aba2',
+        '#c6b27d',
+        '#b37a62',
+        '#d1573b',
     ]
 };
 
@@ -36,7 +37,9 @@ export default function PaletteFetchForm({ setActivePalette, handleActivePalette
 
     async function generatePalette() {
         const palette = await palettesAPI.generatePalette();
-        const newColors = palette.colors.map(c => `#${c[0].toString(16)}${c[1].toString(16)}${c[2].toString(16)}`);
+        const newColors = palette.colors.map(c => 
+            `#${c[0].toString(16).padStart(2, '0')}${c[1].toString(16).padStart(2, '0')}${c[2].toString(16).padStart(2, '0')}`
+        );
         setPalette({...palette, colors: newColors});
     }
 
@@ -62,6 +65,7 @@ export default function PaletteFetchForm({ setActivePalette, handleActivePalette
         label: p.title,
         colors: p.colors.map(color => (
             <div key={color} 
+            //style background color below at end of the style jsx once I decide how. 
             style={{ backgroundColor: color, width: '20px', height: '20px', display: 'inline-block'}}>
             </div>
         ))
@@ -79,7 +83,7 @@ export default function PaletteFetchForm({ setActivePalette, handleActivePalette
     return (
         <div>
             <button className="generator" onClick={generatePalette}>
-                <span><FontAwesomeIcon icon={faArrowsRotate} /></span>
+                <span><FontAwesomeIcon icon={faArrowsRotate} />Generate</span>
             </button>
             <div className="palette">
             {palette.colors.map((color, idx) => (
@@ -100,17 +104,10 @@ export default function PaletteFetchForm({ setActivePalette, handleActivePalette
             <Select
                 className="palette-menu"
                 options={options}
-                //Honestly not sure why the two codes below work, just found it deep in the forums, ask Jim. 
-                value={{ value: palette._id, label: `${palette.title}` }}
+                value={{ value: palette._id, label: palette.title }}
                 onChange={(evt) => setPalette(palettes.find(p => p._id === evt.value))}
                 formatOptionLabel={formatOptionLabel}
             />
         </div >
     )
 }
-
-{/* <select value={palette._id} onChange={(evt)=> setPalette(palettes.find(p => p._id === evt.target.value))} >
-{
-    palettes.map(p => <option value={p._id}>{p.title}</option>)
-}
-</select> */}
