@@ -1,5 +1,4 @@
 .palette {
-    border: solid black;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -20,3 +19,11 @@
     border: none;
 }
 
+.palette-menu {
+    width: 300px;
+    display: inline-block;
+}
+
+.generator {
+    
+}

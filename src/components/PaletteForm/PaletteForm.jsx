@@ -1,4 +1,6 @@
 import { useState, useEffect } from 'react';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faArrowsRotate } from '@fortawesome/free-solid-svg-icons';
 import "./PaletteForm.css";
 import * as palettesAPI from '../../utilities/palettes-api';
 import Select from 'react-select';
@@ -76,6 +78,10 @@ export default function PaletteFetchForm({ setActivePalette, handleActivePalette
     
     return (
         <div>
+            <button className="generator" onClick={generatePalette}>
+                <span><FontAwesomeIcon icon={faArrowsRotate} /></span>
+            </button>
+            <div className="palette">
             {palette.colors.map((color, idx) => (
                 <input
                     className="palette-generator"
@@ -85,13 +91,14 @@ export default function PaletteFetchForm({ setActivePalette, handleActivePalette
                     onChange={(evt) => handleChange(evt, idx)}
                 />
             ))}
-            <button onClick={generatePalette}>Generate Palette</button>
+            </div>
             <form onSubmit={handleSavePalette}>
                 <input type="text" value={palette?.title} onChange={(evt) => setPalette({...palette, title: evt.target.value})}/>
                 <button type="submit">Save Palette</button>
             </form>
 
             <Select
+                className="palette-menu"
                 options={options}
                 //Honestly not sure why the two codes below work, just found it deep in the forums, ask Jim. 
                 value={{ value: palette._id, label: `${palette.title}` }}

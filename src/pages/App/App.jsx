@@ -7,6 +7,7 @@ import MockUpPage from '../MockUpPage/MockUpPage';
 import SavedPalettesList from '../SavedPalettesList/SavedPalettesList';
 import NavBar from '../../components/NavBar/NavBar';
 
+
 export default function App() {
   const [user, setUser] = useState(getUser());
 
