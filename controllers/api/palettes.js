@@ -42,14 +42,19 @@ async function generatePalette(req, res) {
         res.status(400).json(err);
     }
 }
+
 async function savePalette(req, res) {
     try {
-        req.body.user = req.user._id;
-        // Check for duplicate palette
-        if (await Palette.exists({user: req.user._id, colors: req.body.colors})) 
-            return res.json({message: 'Duplicate Palette'});
-        const palette = await Palette.create(req.body);
-        res.json(palette);
+        const palette = await Palette.findOne({user: req.user._id, colors: req.body.colors});
+        if (palette) { 
+            palette.title = req.body.title;
+            await palette.save();
+        } else { 
+            req.body.user = req.user._id;
+            await Palette.create(req.body);
+        }
+        const palettes = await Palette.find({user: req.user._id});
+        res.json(palettes);
     } catch (err) {
         console.log(err)
         res.status(400).json(err);

@@ -17,7 +17,7 @@ const defaultPalette = {
     ]
 };
 
-export default function PaletteFetchForm({ setActivePalette, handleActivePalette }) {
+export default function PaletteFetchForm({ setActivePalette }) {
 
     const [palettes, setPalettes] = useState([]);
     const [palette, setPalette] = useState(defaultPalette);
@@ -46,9 +46,8 @@ export default function PaletteFetchForm({ setActivePalette, handleActivePalette
     async function handleSavePalette(evt) {
         evt.preventDefault();
         try {
-            const savedPalette = await palettesAPI.savePalette(palette)
-            alert(JSON.stringify(palette))
-            console.log(palette, 'handleSavePalette result - frontend')
+            const palettes = await palettesAPI.savePalette(palette);
+            setPalettes(palettes);
         } catch (err) {
             console.error('error saving palette', err)
         }
@@ -57,7 +56,6 @@ export default function PaletteFetchForm({ setActivePalette, handleActivePalette
     function handleChange(evt, colorIdx) {
         const updatedColors = palette.colors.map((color, idx) => idx === colorIdx ? evt.target.value : color);
         setPalette({...palette, colors: updatedColors});
-        handleActivePalette(updatedColors);
     }
 
     const options = palettes.map(p => ({
@@ -82,10 +80,11 @@ export default function PaletteFetchForm({ setActivePalette, handleActivePalette
     
     return (
         <div>
-            <button className="generator" onClick={generatePalette}>
-                <span><FontAwesomeIcon icon={faArrowsRotate} />Generate</span>
-            </button>
             <div className="palette">
+            <button className="generator-btn" onClick={generatePalette}>
+                <span><FontAwesomeIcon icon={faArrowsRotate} /></span>
+            </button>
+        </div>
             {palette.colors.map((color, idx) => (
                 <input
                     className="palette-generator"
@@ -95,12 +94,10 @@ export default function PaletteFetchForm({ setActivePalette, handleActivePalette
                     onChange={(evt) => handleChange(evt, idx)}
                 />
             ))}
-            </div>
             <form onSubmit={handleSavePalette}>
                 <input type="text" value={palette?.title} onChange={(evt) => setPalette({...palette, title: evt.target.value})}/>
                 <button type="submit">Save Palette</button>
             </form>
-
             <Select
                 className="palette-menu"
                 options={options}
@@ -108,6 +105,7 @@ export default function PaletteFetchForm({ setActivePalette, handleActivePalette
                 onChange={(evt) => setPalette(palettes.find(p => p._id === evt.value))}
                 formatOptionLabel={formatOptionLabel}
             />
+
         </div >
     )
 }

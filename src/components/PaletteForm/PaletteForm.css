@@ -5,14 +5,14 @@
 }
 
 .palette-item {
-    width: 20px;
-    height: 20px;
+    width: 40px;
+    height: 40px;
     border: solid;
 }
 
 .palette-generator {
-    height: 70px;
-    width: 70px;
+    height: 110px;
+    width: 160px;
     margin: -4px;
     padding: 0;
     background-color: transparent;
@@ -24,6 +24,7 @@
     display: inline-block;
 }
 
-.generator {
-    
+.generator-btn {
+    height: 30px;
+    width: 40px;
 }

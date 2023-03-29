@@ -2,7 +2,6 @@ import React from 'react';
 import ReactDOM from 'react-dom/client';
 import { BrowserRouter as Router } from 'react-router-dom';
 import './index.css';
-import {FontAwesomeIcon} from '@fortawesome/react-fontawesome'
 import App from './pages/App/App';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
@@ -10,7 +9,6 @@ root.render(
   <React.StrictMode>
     <Router>
       <App />
-      <FontAwesomeIcon icon="fa-solid fa-arrows-rotate" />
     </Router>
   </React.StrictMode>
 );
