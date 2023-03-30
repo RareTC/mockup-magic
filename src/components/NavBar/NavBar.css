@@ -3,12 +3,16 @@
     justify-content: space-between;
     border: solid;
     align-items: center;
+    background-color:#f2f4ee;
+    color: #485055;
+    border-radius: 10px;
 }
 
 
 .logo {
     width: 200px;
-    margin-left: 25px;;
+    margin-left: 25px;
+
 }
 
 .link-ul li {
@@ -35,7 +39,22 @@
 }
 
 a:-webkit-any-link {
-    color: #fefefe;
+    color: #485055;
     cursor: pointer;
     text-decoration: none;
+}
+
+nav button {
+    background: transparent;
+    border: none;
+}
+
+nav button:hover {
+    background: #df676a;
+    border-radius: 10px;
+}
+
+.NavBar-icons {
+    height: 20px;
+    width: 20px;
 }

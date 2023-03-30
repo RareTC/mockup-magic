@@ -6,6 +6,7 @@ import AuthPage from '../AuthPage/AuthPage';
 import MockUpPage from '../MockUpPage/MockUpPage';
 import SavedPalettesList from '../SavedPalettesList/SavedPalettesList';
 import NavBar from '../../components/NavBar/NavBar';
+import PaletteForm from '../../components/PaletteForm/PaletteForm';
 
 
 export default function App() {
