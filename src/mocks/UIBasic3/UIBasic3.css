@@ -1,0 +1,62 @@
+.UIBasic3-body {
+	height: 100%;
+}
+
+.UIBasic3-nav {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	height: 50px;
+    border: solid;
+}
+
+.UIBasic3-nav a {
+	text-decoration: none;
+	padding: 10px;
+	font-size: 20px;
+}
+
+.UIBasic3-nav a:hover {
+	background-color: #ddd;
+	color: #333;
+}
+
+.UIBasic3-content {
+	display: flex;
+	flex-wrap: wrap;
+	align-items: center;
+	padding-top: 50px;
+	box-sizing: border-box;
+}
+
+.UIBasic3-card {
+	width: 30%;
+	box-shadow: 0 2px 4px rgba(0, 0, 0, .1);
+	border-radius: 5px;
+	overflow: hidden;
+    height: 700px;
+}
+
+.UIBasic3-card .title {
+	font-size: 24px;
+	font-weight: bold;
+	padding: 20px;
+	text-align: center;
+}
+
+.UIBasic3-card p {
+	font-size: 16px;
+	line-height: 1.5;
+	padding: 0 0 20px 20px;
+	text-align: justify;
+}
+
+.UIBasic3-footer {
+	background-color: #333;
+	color: #fff;
+	padding: 20px;
+	text-align: center;
+	font-size: 14px;
+	width: 100%;
+    margin-top: 0;
+}

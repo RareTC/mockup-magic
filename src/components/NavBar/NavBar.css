@@ -3,7 +3,7 @@
     justify-content: space-between;
     border: solid;
     align-items: center;
-    background-color:#f2f4ee;
+    background-color:#f0dfce;
     color: #485055;
     border-radius: 10px;
 }
@@ -50,7 +50,7 @@ nav button {
 }
 
 nav button:hover {
-    background: #df676a;
+    background: #df6769;
     border-radius: 10px;
 }
 

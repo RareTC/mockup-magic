@@ -1,20 +1,56 @@
 import './UIBasic.css'
+import logo from '../../assets/images/mmLogo.png';
 
 export default function UIBasic({ palette }) {
     
     const [c0, c1, c2, c3, c4] = palette.colors
 
     return (
-
-        <section style={{ backgroundGradient: `radial-gradient(circle at 50% 100%, ${c0} 19.9%, ${c1} 35.9%, ${c2} 24.5%)` , backgroundSize: '100% 100%' }}>
-            <div className="UIBasic-Nav" style={{background: c3}}>
-                <ul className="UIBasic-NavList" style={{background: c4, color: c2}}>
-                    <li>Home</li>
-                    <li>Account</li>
-                    <li>About</li>
-                    <li>View</li>
-                </ul>
+        <>
+        <body className="UIBasic-body">
+            <div className="UIBasic-container" style={{background: c2}}>
+                <div className="UIBasic-header" style={{background: c0}}>
+                    <nav>
+                        <h1>Mockup 3</h1>
+                        <h1>Home</h1>
+                        <h1>About</h1>
+                        <h1>Login</h1>
+                    </nav>
+                </div>
+                <div className="UIBasic-wrapper">
+                    <div className="UIBasic-navigation">
+                        <img id="UIBasic-logo" src={logo} alt="mock-logo" />
+                    </div>
+                    <div className="UIBasic-content" style={{background: c1}}>
+                        <h1>Welcome to Mockup Magic!</h1>
+                        <h2>Test your palette on a simple wireframe! </h2>
+                        <p>MockupMagic, give you easy to generate palettes and see what 
+                         they might look like on a website similar to yours.</p>
+                        <button style={{background: c4, color: c3}}>Learn More</button>
+                    </div>
+                </div>
+                <div className="UIBasic-extra">
+                    <div className="UIBasic-card">
+                        <h3>View Layouts</h3>
+                        <p>Click to view other layouts/components.</p>
+                        <button style={{background: c4, color: c3}} id="UIBasic-btn">Read More</button>
+                    </div>
+                    <div className="UIBasic-card">
+                        <h3>Apply Favorite Palettes</h3>
+                        <p>Send your favorite palettes to apply themselves to the mockup</p>
+                        <button style={{background: c4, color: c3}} id="UIBasic-btn">Read More</button>
+                    </div>
+                    <div className="UIBasic-card">
+                        <h3>What is our purpose?</h3>
+                        <p>Click to see the inspiration behind our.</p>
+                        <button style={{background: c4, color: c3}} id="UIBasic-btn">Read More</button>
+                    </div>
+                </div>
+                <div className="UIBasic-footer" style={{background: c0}}>
+                    <p>Copyright@2007</p>
+                </div>
             </div>
-
-        </section>);
+        </body>
+        </>
+    );
 }
