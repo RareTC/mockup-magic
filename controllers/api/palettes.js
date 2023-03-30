@@ -15,6 +15,12 @@ module.exports = {
 // }
 
 
+// async function generateSelectPalette(req, res) {
+//     try {
+//         const 
+//     }
+// }
+
 async function getAllForUser(req, res) {
     try {
         const palettes = await Palette.find({user: req.user._id}).sort('createdAt');

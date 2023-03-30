@@ -1,13 +1,18 @@
-.palette {
-    display: flex;
-    justify-content: center;
-    align-items: center;
+
+.PaletteForm-wholewrapper {
+    margin-top: 40px;
+    margin-bottom: 20px;
+}
+
+.PaletteForm-input-components {
+    display: inline-block;
 }
 
 .palette-item {
     width: 40px;
     height: 40px;
     border: solid;
+    box-sizing: border-box;
 }
 
 .PaletteForm-PaletteList {
@@ -15,12 +20,18 @@
     flex-direction: column;
 }
 
+.PaletteForm-palettecontainer {
+    display: inline-block;
+    flex-direction: row;
+    
+}
+
 .PaletteForm-icons {
     display: flex;
     justify-content: center;
     text-align: center;
     align-items: center;
-    margin-right: 15px;
+    flex: 1;
 }
 
 .PaletteForm-icon-btn {
@@ -28,10 +39,26 @@
     border: none;
     height: 30px;
     width: 30px;
-    font-size: 30px;
     display: inline-block;
-    margin-left: 5px;
-    margin-right: 5px;
+    padding-left: 0;
+}
+
+.PaletteForm-lock {
+    background: transparent;
+    width: 30px;
+    height: 30px;
+    border: none;
+    text-align: center;
+    align-items: center;
+}
+
+.PaletteForm-unlock {
+    background: transparent;
+    width: 30px;
+    height: 30px;
+    border: none;
+    text-align: center;
+    align-items: center;
 }
 
 .palette-generator {
@@ -43,12 +70,46 @@
     border: none;
 }
 
-.palette-menu {
-    width: 300px;
-    display: inline-block;
+.PaletteForm-palettecomponents {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
 }
 
 .generator-btn {
-    height: 30px;
-    width: 40px;
+    height: 40px;
+    width: 80px;
+    font-size: 20px;
+    border: none;
+    border-radius: 20px;
+    background-color:#f0dfce;
 }
+
+.palette-menu {
+    width: 180px;
+    border-radius: 20px;
+    background-color:#f0dfce;
+}
+
+.PaletteForm-input {
+    height: 20px;
+    width: 100px;
+    border: none;
+    border-radius: 20px;
+    padding: 10px;
+    background-color:#f0dfce;
+    text-align: center;
+}
+
+.PaletteForm-save {
+    height: 20px;
+    width: 30px;
+    border: none;
+    border-radius: 10%;
+    margin-left: 5px;
+    background-color:#f0dfce;
+    text-align: center;
+}
+
+
+
