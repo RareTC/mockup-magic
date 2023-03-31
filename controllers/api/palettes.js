@@ -4,6 +4,18 @@ module.exports = {
     generatePalette,
     savePalette, 
     getAllForUser,
+    fetchCategories
+}
+
+async function fetchCategories(req, res) {
+    try {
+        const url = 'http://colormind.io/list/';
+        const response = await fetch(url);
+        const categories = await response.json();
+        res.json(categories.result)
+    } catch (err) {
+        res.status(400).json(err);
+    }
 }
 
 async function getAllForUser(req, res) {
@@ -11,22 +23,20 @@ async function getAllForUser(req, res) {
         const palettes = await Palette.find({user: req.user._id}).sort('-createdAt');
         res.json(palettes);
     } catch (err) {
-        res.status(400).json(err);
+        res.status(400).json(err, 'err');
     }
 }
 
 async function generatePalette(req, res) {
-    console.log('is the backend even trying?')
     try {
     const url = `http://colormind.io/api/`;
     const data = {
         input: req.body,
         model: 'default'
     };
-    console.log(data, 'backend controller for payload')
         const response = await fetch(url,  {
             method: 'POST',
-            body: JSON.stringify(data),
+            body: JSON.stringify(data)
         });
         const colors = await response.json();
         res.json({colors: colors.result, title: 'Generated Palette'});

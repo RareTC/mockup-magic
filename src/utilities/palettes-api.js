@@ -1,9 +1,12 @@
 import sendRequest from "./send-request";
 const BASE_URL= '/api/palettes';
 
-export async function generatePalette(colorSelected) {
-    console.log(colorSelected, 'have we made it to the API?')
-    return await sendRequest(BASE_URL, 'POST', colorSelected )
+export async function fetchCategories() {
+    return await sendRequest(`${BASE_URL}/category`)
+}
+
+export async function generatePalette(colorSelected, category) {
+    return await sendRequest(BASE_URL, 'POST', colorSelected, category )
 }
 
 export async function savePalette(savedPalette) {

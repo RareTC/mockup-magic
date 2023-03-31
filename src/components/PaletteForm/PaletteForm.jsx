@@ -6,7 +6,6 @@ import { faAnglesLeft } from '@fortawesome/free-solid-svg-icons';
 import { faLockOpen } from '@fortawesome/free-solid-svg-icons';
 import { faLock } from '@fortawesome/free-solid-svg-icons';
 import { faBookmark } from '@fortawesome/free-solid-svg-icons';
-
 import "./PaletteForm.css";
 import * as palettesAPI from '../../utilities/palettes-api';
 import Select from 'react-select';
@@ -25,12 +24,20 @@ const defaultPalette = {
 
 export default function PaletteFetchForm({ setActivePalette }) {
 
-    // 'N', 'N', 'N', 'N', 'N'
-
+    const [catList, setCatList] = useState([]);
+    const [catPick, setCatPick] = useState([])
     const [lockedColors, setLockedColors] = useState([false, false, false, false, false]);
     const [palettes, setPalettes] = useState([]);
     const [palette, setPalette] = useState(defaultPalette);
 
+    useEffect(() => {
+        async function getCats() {
+            const categories = await palettesAPI.fetchCategories();
+            setCatList(categories);
+        }
+        getCats(catList);
+    }, []); 
+    
     useEffect(() => {
         setActivePalette(palette)
     }, [palette])
@@ -45,9 +52,7 @@ export default function PaletteFetchForm({ setActivePalette }) {
     }, []);
 
     async function generatePalette(lockedColors) {
-        console.log(lockedColors, ' in the generator')
         const lockedColorsArr = Object.values(lockedColors);
-        console.log(lockedColorsArr, 'converted to an arr')
         const colorSelected = lockedColorsArr.map(c => {
             if(c !== false ) {
                 return hexToRGB(c);
@@ -55,8 +60,8 @@ export default function PaletteFetchForm({ setActivePalette }) {
                 return 'N';
             }
         })
-        console.log(colorSelected, 'after map')
-        const palette = await palettesAPI.generatePalette(colorSelected);
+        const category = catPick;
+        const palette = await palettesAPI.generatePalette(colorSelected, category);
         const newColors = palette.colors.map(c =>
             `#${c[0].toString(16).padStart(2, '0')}${c[1].toString(16).padStart(2, '0')}${c[2].toString(16).padStart(2, '0')}`
         );
@@ -108,12 +113,12 @@ export default function PaletteFetchForm({ setActivePalette }) {
         const colors = paletteCopy.colors;
         [colors[idx1], colors[idx2]] = [colors[idx2], colors[idx1]];
         setPalette(paletteCopy);
-        [lockedColors[idx1], lockedColors[idx2]] = [lockedColors[idx2], lockedColors[idx1]];
-        setPalette(paletteCopy);
+        const lockedCopy = { ...lockedColors };
+        [lockedCopy[idx1], lockedCopy[idx2]] = [lockedCopy[idx2], lockedCopy[idx1]];
+        setLockedColors(lockedCopy);
     }
 
     const lockColor = (idx) => {
-        console.log(idx,'locking color')
         const newLockedColors = { ...lockedColors };
         if (newLockedColors[idx] === false) {
             newLockedColors[idx] = palette.colors[idx];
@@ -124,7 +129,13 @@ export default function PaletteFetchForm({ setActivePalette }) {
         setLockedColors(newLockedColors);
         console.log(newLockedColors, 'last step newLockedColors')
         console.log(lockedColors, 'last step lockedColors')
-      };
+    };
+
+    const categoryPick = (idx) => {
+        const selectCat = catList[idx+1]
+        setCatPick(selectCat)
+        console.log(catPick)
+    };
 
     
     if (!palette) return null;
@@ -133,9 +144,33 @@ export default function PaletteFetchForm({ setActivePalette }) {
         <>
             <div className="PaletteForm-wholewrapper">
                 <div className="PaletteForm-input-components">
+                    <div className="PaletteForm-categories">
+                        {/* <select 
+                        onChange={(evt) => categoryPick(evt.target.value)}
+                        >
+                        {catList.map((cat, idx) =>  (
+                            <option 
+                            value={cat}
+                            key={idx}
+                            className="PaletteForm-catbtn"
+                            >
+                            {cat}
+                            </option>
+                            ))};
+                        </select>  */}
+{/* 
+                        <Select
+                            className="palette-menu"
+                            options={options}
+                            value={{ value: palette._id, label: palette.title }}
+                            onChange={(evt) => setPalette(palettes.find(p => p._id === evt.value))}
+                            formatOptionLabel={formatOptionLabel}
+                        /> */}
+                    </div>
                     {palette.colors.map((color, idx) => (
                         <div className="PaletteForm-PaletteList" key={idx} >
                             <div className='PaletteForm-palettecontainer'>
+                            <div>{color}</div>
                                 <input
                                     className="palette-generator"
                                     key={idx}
@@ -158,7 +193,7 @@ export default function PaletteFetchForm({ setActivePalette }) {
                                     </button>
                                     :
                                     <button className='PaletteForm-lock' onClick={() => lockColor(idx)}>
-                                        <FontAwesomeIcon icon={faLock} />
+                                        <FontAwesomeIcon className="PaletteForm-lock-icon" icon={faLock} />
                                     </button>
                                 }
                                 {idx === 4 ?

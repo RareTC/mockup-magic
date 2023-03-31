@@ -6,9 +6,11 @@ const palettesCtrl = require('../../controllers/api/palettes');
 //POST to create note
 router.post('/', palettesCtrl.generatePalette);
 
-router.post('/save', ensureLoggedIn, palettesCtrl.savePalette)
+router.get('/category', palettesCtrl.fetchCategories);
 
-router.get('/saved', ensureLoggedIn, palettesCtrl.getAllForUser)
+router.post('/save', ensureLoggedIn, palettesCtrl.savePalette);
+
+router.get('/saved', ensureLoggedIn, palettesCtrl.getAllForUser);
 
 
 module.exports = router;
