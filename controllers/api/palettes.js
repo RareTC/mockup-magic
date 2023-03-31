@@ -4,40 +4,26 @@ module.exports = {
     generatePalette,
     savePalette, 
     getAllForUser,
-    // edit,
 }
-
-// function edit(req, res) {
-//     Palette.findOne({'palettes._id': req.params.id}), function(err, palette) {
-//         const editPalette = palette.id(req.params.id)
-//         console.log(ediPalette, ' testing this function in edit ')
-//     }
-// }
-
-
-// async function generateSelectPalette(req, res) {
-//     try {
-//         const 
-//     }
-// }
 
 async function getAllForUser(req, res) {
     try {
-        const palettes = await Palette.find({user: req.user._id}).sort('createdAt');
+        const palettes = await Palette.find({user: req.user._id}).sort('-createdAt');
         res.json(palettes);
     } catch (err) {
         res.status(400).json(err);
     }
 }
 
-
-
 async function generatePalette(req, res) {
+    console.log('is the backend even trying?')
     try {
-        const url = `http://colormind.io/api/`;
-        const data = {
-            model: 'default'
-        };
+    const url = `http://colormind.io/api/`;
+    const data = {
+        input: req.body,
+        model: 'default'
+    };
+    console.log(data, 'backend controller for payload')
         const response = await fetch(url,  {
             method: 'POST',
             body: JSON.stringify(data),

@@ -7,7 +7,7 @@ export default function UIBasic({ palette }) {
 
     return (
         <>
-        <body className="UIBasic-body">
+        <main className="UIBasic-main">
             <div className="UIBasic-container" style={{background: c2}}>
                 <div className="UIBasic-header" style={{background: c0}}>
                     <nav>
@@ -47,10 +47,10 @@ export default function UIBasic({ palette }) {
                     </div>
                 </div>
                 <div className="UIBasic-footer" style={{background: c0}}>
-                    <p>Copyright@2007</p>
+                    <p>Copyright@2023</p>
                 </div>
             </div>
-        </body>
+        </main>
         </>
     );
 }

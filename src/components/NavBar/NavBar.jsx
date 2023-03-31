@@ -18,7 +18,7 @@ export default function NavBar({ user, setUser }) {
         <img className="logo" src={logo} alt="Rabbit In Magician Hat Logo" />
       <div className="userFeatureNav">
         {/* <ul className="userinfo">
-            <li className="user-ul">Welcome, {user.name}</li>
+          <li className="user-ul">Welcome, {user.name}</li>
         </ul> */}
         <ul className="link-ul">
           <li>

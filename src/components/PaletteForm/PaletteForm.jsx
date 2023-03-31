@@ -25,7 +25,9 @@ const defaultPalette = {
 
 export default function PaletteFetchForm({ setActivePalette }) {
 
-    const [locked, setLocked] = useState([false, false, false, false, false]);
+    // 'N', 'N', 'N', 'N', 'N'
+
+    const [lockedColors, setLockedColors] = useState([false, false, false, false, false]);
     const [palettes, setPalettes] = useState([]);
     const [palette, setPalette] = useState(defaultPalette);
 
@@ -42,25 +44,31 @@ export default function PaletteFetchForm({ setActivePalette }) {
         getPalettes();
     }, []);
 
-    async function generatePalette() {
-        const palette = await palettesAPI.generatePalette();
+    async function generatePalette(lockedColors) {
+        console.log(lockedColors, ' in the generator')
+        const lockedColorsArr = Object.values(lockedColors);
+        console.log(lockedColorsArr, 'converted to an arr')
+        const colorSelected = lockedColorsArr.map(c => {
+            if(c !== false ) {
+                return hexToRGB(c);
+            } else {
+                return 'N';
+            }
+        })
+        console.log(colorSelected, 'after map')
+        const palette = await palettesAPI.generatePalette(colorSelected);
         const newColors = palette.colors.map(c =>
             `#${c[0].toString(16).padStart(2, '0')}${c[1].toString(16).padStart(2, '0')}${c[2].toString(16).padStart(2, '0')}`
         );
         setPalette({ ...palette, colors: newColors });
     }
 
-    //     async function generatePalette() {
-    //         if ([...locked] === false) {
-    //             const palette = await palettesAPI.generatePalette();
-    //             const newColors = palette.colors.map(c => 
-    //                 `#${c[0].toString(16).padStart(2, '0')}${c[1].toString(16).padStart(2, '0')}${c[2].toString(16).padStart(2, '0')}`
-    //             );
-    //         } else {
-    // make a new request in here ORRRR do an entirely different function outside and not do an if/else 
-    //         }
-    //         setPalette({...palette, colors: newColors});
-    //     }
+    function hexToRGB(hex) {
+        const r = parseInt(hex.substring(1, 3), 16);
+        const g = parseInt(hex.substring(3, 5), 16);
+        const b = parseInt(hex.substring(5, 7), 16);
+        return [r, g, b];
+    }
 
     async function handleSavePalette(evt) {
         evt.preventDefault();
@@ -100,19 +108,23 @@ export default function PaletteFetchForm({ setActivePalette }) {
         const colors = paletteCopy.colors;
         [colors[idx1], colors[idx2]] = [colors[idx2], colors[idx1]];
         setPalette(paletteCopy);
+        [lockedColors[idx1], lockedColors[idx2]] = [lockedColors[idx2], lockedColors[idx1]];
+        setPalette(paletteCopy);
     }
 
     const lockColor = (idx) => {
-        const newLockedColors = [...locked];
-        newLockedColors[idx] = true;
-        setLocked(newLockedColors);
-    };
-
-    const unlockColor = (idx) => {
-        const newLockedColors = [...locked];
-        newLockedColors[idx] = false;
-        setLocked(newLockedColors);
-    }
+        console.log(idx,'locking color')
+        const newLockedColors = { ...lockedColors };
+        if (newLockedColors[idx] === false) {
+            newLockedColors[idx] = palette.colors[idx];
+            console.log(newLockedColors, 'step two of a lock')
+        } else {
+            newLockedColors[idx] = false;
+        }
+        setLockedColors(newLockedColors);
+        console.log(newLockedColors, 'last step newLockedColors')
+        console.log(lockedColors, 'last step lockedColors')
+      };
 
     
     if (!palette) return null;
@@ -140,8 +152,8 @@ export default function PaletteFetchForm({ setActivePalette }) {
                                         <FontAwesomeIcon icon={faAnglesLeft} />
                                     </button>
                                 }
-                                {locked === false ?
-                                    <button className='PaletteForm-unlock' onClick={() => unlockColor(idx)}>
+                                {lockedColors[idx] === false ?
+                                    <button className='PaletteForm-unlock' onClick={() => lockColor(idx)}>
                                         <FontAwesomeIcon icon={faLockOpen} />
                                     </button>
                                     :
@@ -160,7 +172,7 @@ export default function PaletteFetchForm({ setActivePalette }) {
                         </div>
                     ))}
                     <div className="PaletteForm-palettecomponents">
-                        <button className="generator-btn" onClick={generatePalette}>
+                        <button className="generator-btn" onClick={() => generatePalette(lockedColors)}>
                             <FontAwesomeIcon icon={faArrowsRotate} />
                         </button>
                         <Select

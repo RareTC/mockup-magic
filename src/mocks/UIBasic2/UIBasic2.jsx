@@ -6,9 +6,9 @@ export default function UIBasic2({ palette }) {
 
     return (
         <>
-        <body>
-            <div class="UIBasic2-container" style={{background: c3}}>
-                <nav class="UIBasic2-navbar" style={{background: c4}}>
+
+            <div className="UIBasic2-container" style={{background: c3}}>
+                <nav className="UIBasic2-navbar" style={{background: c4}}>
                     <ul className='UIBasic2-Navlist'>
                         <li style={{background: c1}}><a href="#">Home</a></li>
                         <li style={{background: c1}}><a href="#">About</a></li>
@@ -16,7 +16,7 @@ export default function UIBasic2({ palette }) {
                         <li style={{background: c1}}><a href="#">Contact</a></li>
                     </ul>
                 </nav>
-                <main class="UIBasic2-main">
+                <main className="UIBasic2-main">
                     <article>
                         <h1 style={{color: c1}}>What is the story behind Mockup Magic?</h1>
                         <p style={{background: c2}}>I am glad you asked! The problem began with never knowing what I wanted a website to look like or being unable
@@ -33,7 +33,7 @@ export default function UIBasic2({ palette }) {
                     </article>
                 </main>
             </div>
-        </body>
+
         </>
 
     );
