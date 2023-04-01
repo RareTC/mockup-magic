@@ -24,20 +24,10 @@ const defaultPalette = {
 
 export default function PaletteFetchForm({ setActivePalette }) {
 
-    const [catList, setCatList] = useState([]);
-    const [catPick, setCatPick] = useState([])
     const [lockedColors, setLockedColors] = useState([false, false, false, false, false]);
     const [palettes, setPalettes] = useState([]);
     const [palette, setPalette] = useState(defaultPalette);
 
-    useEffect(() => {
-        async function getCats() {
-            const categories = await palettesAPI.fetchCategories();
-            setCatList(categories);
-        }
-        getCats(catList);
-    }, []); 
-    
     useEffect(() => {
         setActivePalette(palette)
     }, [palette])
@@ -60,8 +50,7 @@ export default function PaletteFetchForm({ setActivePalette }) {
                 return 'N';
             }
         })
-        const category = catPick;
-        const palette = await palettesAPI.generatePalette(colorSelected, category);
+        const palette = await palettesAPI.generatePalette(colorSelected);
         const newColors = palette.colors.map(c =>
             `#${c[0].toString(16).padStart(2, '0')}${c[1].toString(16).padStart(2, '0')}${c[2].toString(16).padStart(2, '0')}`
         );
@@ -122,51 +111,20 @@ export default function PaletteFetchForm({ setActivePalette }) {
         const newLockedColors = { ...lockedColors };
         if (newLockedColors[idx] === false) {
             newLockedColors[idx] = palette.colors[idx];
-            console.log(newLockedColors, 'step two of a lock')
         } else {
             newLockedColors[idx] = false;
         }
         setLockedColors(newLockedColors);
-        console.log(newLockedColors, 'last step newLockedColors')
-        console.log(lockedColors, 'last step lockedColors')
     };
 
-    const categoryPick = (idx) => {
-        const selectCat = catList[idx+1]
-        setCatPick(selectCat)
-        console.log(catPick)
-    };
 
-    
+
     if (!palette) return null;
 
     return (
         <>
             <div className="PaletteForm-wholewrapper">
                 <div className="PaletteForm-input-components">
-                    <div className="PaletteForm-categories">
-                        {/* <select 
-                        onChange={(evt) => categoryPick(evt.target.value)}
-                        >
-                        {catList.map((cat, idx) =>  (
-                            <option 
-                            value={cat}
-                            key={idx}
-                            className="PaletteForm-catbtn"
-                            >
-                            {cat}
-                            </option>
-                            ))};
-                        </select>  */}
-{/* 
-                        <Select
-                            className="palette-menu"
-                            options={options}
-                            value={{ value: palette._id, label: palette.title }}
-                            onChange={(evt) => setPalette(palettes.find(p => p._id === evt.value))}
-                            formatOptionLabel={formatOptionLabel}
-                        /> */}
-                    </div>
                     {palette.colors.map((color, idx) => (
                         <div className="PaletteForm-PaletteList" key={idx} >
                             <div className='PaletteForm-palettecontainer'>

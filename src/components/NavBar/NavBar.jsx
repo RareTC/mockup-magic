@@ -2,7 +2,6 @@ import logo from '../../assets/images/mmLogo.png';
 import palette from '../../assets/images/palette.png'
 import logout from '../../assets/images/logout.png'
 import home from '../../assets/images/home.png'
-import save from '../../assets/images/save.png'
 import "./NavBar.css";
 import { Link } from 'react-router-dom';
 import * as userService from '../../utilities/users-service';
@@ -31,12 +30,6 @@ export default function NavBar({ user, setUser }) {
             <button>
               <img className="NavBar-icons" src={palette} alt="Palette Sample Icon" />
               <Link to="/mockup">Mockups</Link>
-            </button>
-          </li>
-          <li>
-            <button>
-            <img className="NavBar-icons" src={save} alt="Palette Sample Icon" />
-              <Link to="/saved">Saved Palettes</Link>
             </button>
           </li>
           <li className="user-ul">

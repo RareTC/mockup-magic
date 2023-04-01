@@ -4,7 +4,6 @@ import { getUser } from '../../utilities/users-service';
 import './App.css';
 import AuthPage from '../AuthPage/AuthPage';
 import MockUpPage from '../MockUpPage/MockUpPage';
-import SavedPalettesList from '../SavedPalettesList/SavedPalettesList';
 import NavBar from '../../components/NavBar/NavBar';
 import PaletteForm from '../../components/PaletteForm/PaletteForm';
 
@@ -20,7 +19,6 @@ export default function App() {
             <Routes>
               {/* Route components in here */}
               <Route path="/mockup" element={<MockUpPage />} />
-              <Route path="/saved" element={<SavedPalettesList />} />
             </Routes>
           </>
           :
