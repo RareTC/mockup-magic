@@ -17,23 +17,23 @@ export default function UIBasic3({ palette }) {
             <div className="UIBasic3-content">
                 <div className="UIBasic3-card">
                     <img src="https://via.placeholder.com/350x250" alt="Food Item 1" />
-                    <div className="title">Food Item 1</div>
+                    <div className="title">Card Item 1</div>
                     <p>L lobortis purus id velit hendrerit, eget molestie justo consectetur.</p>
                 </div>
                 <div className="UIBasic3-card">
                     <img src="https://via.placeholder.com/350x250" alt="Food Item 2" />
-                    <div className="title">Food Item 2</div>
+                    <div className="title">Card Item 2</div>
                     <p>Nullam libero pellentesque, sit amet rhoncus velit suscipit. </p>
                 </div>
                 <div className="UIBasic3-card">
                     <img src="https://via.placeholder.com/350x250" alt="Food Item 3" />
-                    <div className="title">Food Item 3</div>
+                    <div className="title">Card Item 3</div>
                     <p>Aliquallis lorem vehicula. Nullam ut diam semper, luctus tellus vel, maximus odio.</p>
                 </div>
             </div>
 
             <div className="UIBasic3-footer">
-                <p>&copy; 2023 Restaurant Name</p>
+                <p>&copy; 2023 Site Name</p>
             </div>
         </main>
         </>

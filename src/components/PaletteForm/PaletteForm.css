@@ -3,9 +3,24 @@
     margin-bottom: 20px;
 }
 
+.PaletteForm-colorname {
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    border-top-left-radius: 100%;
+    border-top-right-radius: 100%;
+    color: #F6F9F6;
+    text-shadow: 1px 1px 2px #697177;
+    padding-top: 3px;
+    position: relative;
+    right: 4px;
+    padding-right: 8px;
+}
+
 .PaletteForm-input-components {
     display: inline-block;
-
+    border: none;
+    border: transparent;
 }
 
 .palette-item {
@@ -23,7 +38,6 @@
 .PaletteForm-palettecontainer {
     display: inline-block;
     flex-direction: row;
-    
 }
 
 .PaletteForm-icons {
@@ -43,6 +57,14 @@
     padding-left: 0;
 }
 
+#ra:active {
+    transform: translateY(2px);
+}
+
+#la:active {
+    transform: translateY(2px);
+}
+
 .PaletteForm-lock {
     background: transparent;
     width: 30px;
@@ -57,16 +79,17 @@
     transform: scale(1);
     animation: pulse-white 2s infinite;
     border-radius: 50%;
+    height: 13px;
 }
 
 @keyframes pulse-white {
     0% {
       transform: scale(.95);
-      box-shadow: 0 0 0 0 rgba(255, 255, 255, 0.7);
+      box-shadow: 0 0 0 0 rgba(229, 127, 97, 0.7);
     }
     40% {
         transform: scale(1);
-        box-shadow: 0 0 0 8px rgba(255, 255, 255, 0);
+        box-shadow: 0 0 0 12px rgba(255, 255, 255, 0);
     }
       
     100% {
@@ -91,6 +114,24 @@
     padding: 0;
     background-color: transparent;
     border: none;
+    border-color: transparent;
+}
+
+  input[type="color"]::-moz-color-swatch {
+    border: none;
+  }
+  
+  input[type="color"]::-webkit-color-swatch-wrapper {
+    padding: 0;
+    border-radius: 0;
+  }
+  
+  input[type="color"]::-webkit-color-swatch {
+    border: none;
+  }
+
+.palette-generator:focus {
+    outline: none;
 }
 
 .PaletteForm-palettecomponents {
@@ -99,29 +140,56 @@
     align-items: center;
 }
 
+.faArrows {
+    filter: invert(87%) sepia(1%) saturate(775%) hue-rotate(71deg) brightness(115%) contrast(95%)
+}
+
 .generator-btn {
     height: 40px;
     width: 80px;
     font-size: 20px;
     border: none;
     border-radius: 20px;
-    background-color:#f0dfce;
+    background-color: #697177;
+    box-shadow: rgba(0, 0, 0, 0.19) 0px 10px 20px, rgba(0, 0, 0, 0.23) 0px 6px 6px;
+}
+
+.generator-btn:hover {
+    background: #a5c4d2;
+    border: solid 1px #a5c4d2;
+    border-radius: 20px;
+    cursor: grab;
+    box-shadow: rgba(50, 50, 93, 0.25) 0px 30px 60px -12px inset,
+    rgba(0, 0, 0, 0.3) 0px 18px 36px -18px inset;
+    border-radius: 20px;
+}
+
+.generator-btn:active {
+    transform: translateY(2px);
 }
 
 .palette-menu {
     width: 190px;
     border-radius: 20px;
-    background-color:#f0dfce;
+    background-color:#697177;
+    margin-left: 160px;
 }
 
 .PaletteForm-input {
     height: 20px;
-    width: 100px;
-    border: none;
+    width: 130px;
     border-radius: 20px;
     padding: 10px;
-    background-color:#f0dfce;
+    background-color: #A5C4D2;
+    color: #697177;
     text-align: center;
+    margin-left: 50px;
+    border: solid 1px #697177;
+}
+
+.PaletteForm-input:focus {
+    outline: none;
+    border: solid 1px;
 }
 
 .PaletteForm-save {
@@ -130,9 +198,24 @@
     border: none;
     border-radius: 10%;
     margin-left: 5px;
-    background-color:#f0dfce;
+    padding-top: 4px;
+    padding-bottom: 20px;
+    background-color:#697177;
+    color: #F6F9F6;
     text-align: center;
+    box-shadow: rgba(0, 0, 0, 0.19) 0px 10px 20px, rgba(0, 0, 0, 0.23) 0px 6px 6px;
 }
 
+.PaletteForm-save:hover {
+    background: #a5c4d2;
+    border: solid 1px #a5c4d2;
+    border-radius: 20px;
+    cursor: grab;
+    box-shadow: rgba(50, 50, 93, 0.25) 0px 30px 60px -12px inset,
+    rgba(0, 0, 0, 0.3) 0px 18px 36px -18px inset;
+    border-radius: 10%;
+}
 
-
+.PaletteForm-save:active {
+    transform: translateY(2px);
+}

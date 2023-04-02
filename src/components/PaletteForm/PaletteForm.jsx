@@ -22,7 +22,7 @@ const defaultPalette = {
     ]
 };
 
-export default function PaletteFetchForm({ setActivePalette }) {
+export default function PaletteForm({ setActivePalette }) {
 
     const [lockedColors, setLockedColors] = useState([false, false, false, false, false]);
     const [palettes, setPalettes] = useState([]);
@@ -117,8 +117,6 @@ export default function PaletteFetchForm({ setActivePalette }) {
         setLockedColors(newLockedColors);
     };
 
-
-
     if (!palette) return null;
 
     return (
@@ -127,8 +125,12 @@ export default function PaletteFetchForm({ setActivePalette }) {
                 <div className="PaletteForm-input-components">
                     {palette.colors.map((color, idx) => (
                         <div className="PaletteForm-PaletteList" key={idx} >
+                            <div className='PaletteForm-colorname'
+                            style={{backgroundColor: color }}
+                            >
+                                {color}
+                            </div>
                             <div className='PaletteForm-palettecontainer'>
-                            <div>{color}</div>
                                 <input
                                     className="palette-generator"
                                     key={idx}
@@ -141,7 +143,7 @@ export default function PaletteFetchForm({ setActivePalette }) {
                                 {idx === 0 ?
                                     null
                                     :
-                                    <button className="PaletteForm-icon-btn" onClick={() => swapColors(idx, idx - 1)}>
+                                    <button className="PaletteForm-icon-btn" id="la" onClick={() => swapColors(idx, idx - 1)}>
                                         <FontAwesomeIcon icon={faAnglesLeft} />
                                     </button>
                                 }
@@ -157,7 +159,7 @@ export default function PaletteFetchForm({ setActivePalette }) {
                                 {idx === 4 ?
                                     null
                                     :
-                                    <button className="PaletteForm-icon-btn" id="last-ra" onClick={() => swapColors(idx, idx + 1)}>
+                                    <button className="PaletteForm-icon-btn" id="ra" onClick={() => swapColors(idx, idx + 1)}>
                                         <FontAwesomeIcon icon={faAnglesRight} />
                                     </button>
                                 }
@@ -166,7 +168,7 @@ export default function PaletteFetchForm({ setActivePalette }) {
                     ))}
                     <div className="PaletteForm-palettecomponents">
                         <button className="generator-btn" onClick={() => generatePalette(lockedColors)}>
-                            <FontAwesomeIcon icon={faArrowsRotate} />
+                            <FontAwesomeIcon className="faArrows" icon={faArrowsRotate} />
                         </button>
                         <Select
                             className="palette-menu"

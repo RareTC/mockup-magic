@@ -14,29 +14,34 @@ export default function NavBar({ user, setUser }) {
 
   return (
     <nav className="navbar" id='navbar'>
-        <img className="logo" src={logo} alt="Rabbit In Magician Hat Logo" />
+      <Link to="">
+      <img className="logo" src={logo} alt="Rabbit In Magician Hat Logo" />
+      </Link>
       <div className="userFeatureNav">
-        {/* <ul className="userinfo">
-          <li className="user-ul">Welcome, {user.name}</li>
-        </ul> */}
         <ul className="link-ul">
           <li>
-            <button>
-            <img className="NavBar-icons" src={home} alt="Palette Sample Icon" />
-              <Link to="">Home</Link>
-            </button>
+            <Link to="">
+              <button>
+                <img className="NavBar-icons" src={home} alt="Palette Sample Icon" />
+                &nbsp;Home
+              </button>
+            </Link>
           </li>
           <li>
-            <button>
-              <img className="NavBar-icons" src={palette} alt="Palette Sample Icon" />
-              <Link to="/mockup">Mockups</Link>
-            </button>
+            <Link to="/mockup">
+              <button>
+                <img className="NavBar-icons" src={palette} alt="Palette Sample Icon" />
+                &nbsp; Mockups
+              </button>
+            </Link>
           </li>
           <li className="user-ul">
-            <button>
-            <img className="NavBar-icons" src={logout} alt="Palette Sample Icon" />
-              <Link to="" onClick={handleLogOut}>Log Out</Link>
-            </button>
+            <Link to="" onClick={handleLogOut}>
+              <button>
+                <img className="NavBar-icons" src={logout} alt="Palette Sample Icon" />
+                &nbsp; Log Out {user.name}
+              </button>
+            </Link>
           </li>
         </ul>
       </div>

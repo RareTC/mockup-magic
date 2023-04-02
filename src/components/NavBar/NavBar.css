@@ -1,20 +1,19 @@
 .navbar {
     display: flex;
     justify-content: space-between;
-    border: solid;
+    box-shadow: rgba(0, 0, 0, 0.19) 0px 10px 20px, rgba(0, 0, 0, 0.23) 0px 6px 6px;
     align-items: center;
-    background-color:#f0dfce;
-    color: #485055;
+    background: linear-gradient(-45deg, #a5c4d2 70%, #697177 70%);
+    color: #f6f9f6;
     border-radius: 10px;
     margin-left: 10px;
     margin-right: 10px;
 }
 
-
 .logo {
     width: 200px;
     margin-left: 25px;
-
+    filter: invert(87%) sepia(16%) saturate(402%) hue-rotate(158deg) brightness(89%) contrast(94%);
 }
 
 .link-ul li {
@@ -41,22 +40,29 @@
 }
 
 a:-webkit-any-link {
-    color: #485055;
-    cursor: pointer;
+    color: #f6f9f6;
     text-decoration: none;
 }
 
 nav button {
     background: transparent;
     border: none;
+    padding: 6px;
+    line-height: 16px;
+    color: #697177;
+    box-shadow: rgba(0, 0, 0, 0.19) 0px 10px 20px, rgba(0, 0, 0, 0.23) 0px 6px 6px;
+    border-radius: 10px;
 }
 
 nav button:hover {
-    background: #df6769;
+    box-shadow: rgba(50, 50, 93, 0.25) 0px 30px 60px -12px inset,
+    rgba(0, 0, 0, 0.3) 0px 18px 36px -18px inset;
+    background: #f6f9f6;
     border-radius: 10px;
 }
 
 .NavBar-icons {
     height: 20px;
     width: 20px;
+    filter: invert(48%) sepia(8%) saturate(401%) hue-rotate(163deg) brightness(89%) contrast(92%);
 }

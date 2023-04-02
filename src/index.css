@@ -10,7 +10,7 @@ body {
   margin: 10;
   padding: 2vmin;
   height: 100vh;
-  background-image: linear-gradient(#74c1b9, #497f6d);
+  background-color: #f6f9f6;
   background-size: cover;
   background-repeat: no-repeat;
 }
