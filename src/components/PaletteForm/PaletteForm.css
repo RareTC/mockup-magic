@@ -1,6 +1,6 @@
 .PaletteForm-wholewrapper {
     margin-top: 0px;
-    margin-bottom: 20px;
+    margin-bottom: 10px;
 }
 
 .PaletteForm-menu-save-lineup {
@@ -179,9 +179,11 @@
 }
 
 .palette-menu {
-    width: 190px;
-    border-radius: 20px;
+    width: 210px;
+    border-radius: 5px;
     background-color:#697177;
+    padding: 1px;
+    border: solid 2px #697177;
 }
 
 .PaletteForm-input {
@@ -189,7 +191,7 @@
     width: 130px;
     border-radius: 20px;
     padding: 10px;
-    background-color: #A5C4D2;
+    /* background-color: #A5C4D2; */
     color: #697177;
     text-align: center;
     margin-left: 50px;
@@ -200,7 +202,7 @@
 }
 
 @keyframes borderblink {
-    50% { border-color: #e57f61;}
+    50% { border-color: #a5c4d2;}
 }
 
 .PaletteForm-input:focus {

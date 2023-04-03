@@ -26,37 +26,31 @@ export default function MockUpPage() {
     label: m.title
   }));
 
+  const selectStyle = {
+    menu: (style) => ({
+      ...style,
+      backgroundColor: "#f6f9f6",
+      fontSize: "15px",
+      marginTop: "0",
+    }),
+  }
+
   const defaultOption = { value: activeMock, label: activeMock }
 
   return (
     <>
       <PaletteForm setActivePalette={setActivePalette} />
+      <div className='Mockup-menu-container'>
       <Select
         className="Mockup-menu"
         options={options}
         defaultValue={defaultOption}
         value={options.find((option) => option.value === activeMock)}
         onChange={(selectedOption) => setActiveMock(selectedOption.value)}
+        styles={selectStyle}
       />
+      </div>
       {mocks.find(m => m.title === activeMock).ui}
     </>
   )
 };
-
-
-{/* <select value={activeMock} onChange={(evt) => setActiveMock(evt.target.value)}>
-{mocks.map(m => <option key={m.title} value={m.title}>{m.title}</option>)}
-</select> */}
-
-// onChange={(evt) => setPalette(palettes.find(p => p._id === evt.value))}
-// formatOptionLabel={formatOptionLabel}
-
-//   const options = palettes.map(p => ({
-//     value: p._id,
-//     label: p.title,
-//     colors: p.colors.map(color => (
-//         <div key={color}
-//             style={{ backgroundColor: color, width: '30px', height: '30px', display: 'inline-block' }}>
-//         </div>
-//     ))
-// }));
