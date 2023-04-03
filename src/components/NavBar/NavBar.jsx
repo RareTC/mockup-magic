@@ -15,8 +15,11 @@ export default function NavBar({ user, setUser }) {
   return (
     <nav className="navbar" id='navbar'>
       <Link to="">
-      <img className="logo" src={logo} alt="Rabbit In Magician Hat Logo" />
+        <img className="logo" src={logo} alt="Rabbit In Magician Hat Logo" />
       </Link>
+        <h3 className='NavBar-userinfo'>
+          Welcome, {user.name}
+        </h3>
       <div className="userFeatureNav">
         <ul className="link-ul">
           <li>
@@ -39,7 +42,7 @@ export default function NavBar({ user, setUser }) {
             <Link to="" onClick={handleLogOut}>
               <button>
                 <img className="NavBar-icons" src={logout} alt="Palette Sample Icon" />
-                &nbsp; Log Out {user.name}
+                &nbsp; Log Out
               </button>
             </Link>
           </li>

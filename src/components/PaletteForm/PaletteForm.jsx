@@ -178,7 +178,7 @@ export default function PaletteForm({ setActivePalette }) {
                             formatOptionLabel={formatOptionLabel}
                         />
                         <form className="PaletteForm-paletteform" onSubmit={handleSavePalette}>
-                            <input className="PaletteForm-input" type="text" value={palette?.title} onChange={(evt) => setPalette({ ...palette, title: evt.target.value })} />
+                            <input className="PaletteForm-input" type="text" placeholder="Name and Save Here" onChange={(evt) => setPalette({ ...palette, title: evt.target.value })} />
                             <button className="PaletteForm-save" type="submit">
                                 <FontAwesomeIcon icon={faBookmark} />
                             </button>

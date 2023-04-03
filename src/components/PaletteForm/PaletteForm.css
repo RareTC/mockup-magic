@@ -7,14 +7,11 @@
     display: flex;
     justify-content: center;
     width: 100%;
-    border-top-left-radius: 100%;
-    border-top-right-radius: 100%;
     color: #F6F9F6;
-    text-shadow: 1px 1px 2px #697177;
+    text-shadow: 0px 1px 3px #697177;
     padding-top: 3px;
-    position: relative;
     right: 4px;
-    padding-right: 8px;
+    margin-top: 10px;
 }
 
 .PaletteForm-input-components {
@@ -110,7 +107,6 @@
 .palette-generator {
     height: 110px;
     width: 160px;
-    margin: -4px;
     padding: 0;
     background-color: transparent;
     border: none;
@@ -141,7 +137,8 @@
 }
 
 .faArrows {
-    filter: invert(87%) sepia(1%) saturate(775%) hue-rotate(71deg) brightness(115%) contrast(95%)
+    filter: invert(88%) sepia(11%) saturate(582%) hue-rotate(158deg) brightness(84%) contrast(94%);
+    
 }
 
 .generator-btn {
@@ -184,12 +181,20 @@
     color: #697177;
     text-align: center;
     margin-left: 50px;
-    border: solid 1px #697177;
+    border: solid 2px #697177;
+    animation-name: borderblink;
+    animation-duration: 1s;
+    animation-iteration-count: infinite;
+}
+
+@keyframes borderblink {
+    50% { border-color: #e57f61;}
 }
 
 .PaletteForm-input:focus {
     outline: none;
-    border: solid 1px;
+    border: solid 2px;
+    animation: none;
 }
 
 .PaletteForm-save {
@@ -201,7 +206,7 @@
     padding-top: 4px;
     padding-bottom: 20px;
     background-color:#697177;
-    color: #F6F9F6;
+    color: #a5c4d2;
     text-align: center;
     box-shadow: rgba(0, 0, 0, 0.19) 0px 10px 20px, rgba(0, 0, 0, 0.23) 0px 6px 6px;
 }
