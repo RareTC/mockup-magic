@@ -1,5 +1,16 @@
+.Gradient-container {
+display: flex;
+flex-wrap: wrap;
+justify-content: center;
+}
+
 .BackgroundGradient {
-    background-color: #292929;
-    height: 300px;
-    width: 300px;
+    width: 350px;
+    height: 350px;
+    border: solid 1px;
+}
+
+.Gradient-container p {
+    background: #697177;
+    margin-top: 0;
 }

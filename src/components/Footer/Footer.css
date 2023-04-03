@@ -1,26 +1,3 @@
-/* #footer{
-    width: 100%;
-    height: 90px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    background: linear-gradient(135deg, #a5c4d2 75%, #697177 75%);
-    border-radius: 10px;
-    margin-top: 10px;
-}
-
-.linkedIn {
-    width: 100px;
-    margin-left: 20px;
-    filter: invert(53%) sepia(10%) saturate(365%) hue-rotate(163deg) brightness(97%) contrast(86%);
-}
-
-.git {
-    width: 100px;
-    margin-right: 20px;
-    filter: invert(33%) sepia(10%) saturate(365%) hue-rotate(163deg) brightness(97%) contrast(86%);
-} */
-
 #footer{
     position: fixed;
     bottom: 0;

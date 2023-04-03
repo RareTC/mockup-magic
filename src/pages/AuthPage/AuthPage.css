@@ -31,3 +31,8 @@
     border-radius: 10px;
     margin-left: 5px;
 }
+
+.AuthPage-container button:hover {
+    border: solid 2px #A5C4D2;
+    background-color: #f6f9f6;
+}

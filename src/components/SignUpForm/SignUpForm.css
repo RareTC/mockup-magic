@@ -22,7 +22,7 @@
     width: 110px;
     border-radius: 20px;
     padding: 5px;
-    background-color: #A5C4D2;
+    background-color: #f6f9f6;
     text-align: center;
     border: solid 2px #697177;
 }
@@ -42,4 +42,9 @@
     border-radius: 10px;
     margin-left: 5px;
     margin-top: 5px;
+}
+
+.Signup-form-container button:hover {
+    border: solid 2px #A5C4D2;
+    background-color: #f6f9f6;
 }

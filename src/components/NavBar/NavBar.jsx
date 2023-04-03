@@ -1,6 +1,7 @@
 import logo from '../../assets/images/mmLogo.png';
 import palette from '../../assets/images/palette.png'
 import logout from '../../assets/images/logout.png'
+import login from '../../assets/images/login.png'
 import home from '../../assets/images/home.png'
 import "./NavBar.css";
 import { Link } from 'react-router-dom';
@@ -14,7 +15,7 @@ export default function NavBar({ user, setUser }) {
 
   return (
     <nav className="navbar" id='navbar'>
-      <Link to="">
+      <Link to="/">
         <img className="logo" src={logo} alt="Rabbit In Magician Hat Logo" />
       </Link>
           { user ? 
@@ -26,7 +27,7 @@ export default function NavBar({ user, setUser }) {
       <div className="userFeatureNav">
         <ul className="link-ul">
           <li>
-            <Link to="">
+            <Link to="/">
               <button>
                 <img className="NavBar-icons" src={home} alt="Palette Sample Icon" />
                 &nbsp;Home
@@ -42,11 +43,18 @@ export default function NavBar({ user, setUser }) {
             </Link>
           </li>
           <li className="user-ul">
-            <Link to="" onClick={handleLogOut}>
+            <Link to="/authpage" onClick={handleLogOut}>
+            { user ?
               <button>
                 <img className="NavBar-icons" src={logout} alt="Palette Sample Icon" />
                 &nbsp; Log Out
               </button>
+              :
+              <button>
+                <img className="NavBar-icons" src={login} alt="Palette Sample Icon" />
+                &nbsp; Log In
+              </button>
+                }
             </Link>
           </li>
         </ul>

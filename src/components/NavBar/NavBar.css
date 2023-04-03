@@ -5,11 +5,10 @@
     align-items: center;
     background: linear-gradient(-45deg, #a5c4d2 70%, #697177 70%);
     color: #f6f9f6;
-    /* border-radius: 10px; */
 }
 
 .NavBar-userinfo {
-    margin-right: 200px;
+    margin-right: 170px;
     color: #697177;
 }
 

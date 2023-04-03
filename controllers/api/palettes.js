@@ -19,7 +19,6 @@ async function getAllForUser(req, res) {
 async function generatePalette(req, res) {
     try {
     const url = `http://colormind.io/api/`;
-    console.log(req.body, 'req log')
     const data = {
         input: req.body,
         model: 'default'
@@ -28,7 +27,6 @@ async function generatePalette(req, res) {
             method: 'POST',
             body: JSON.stringify(data)
         });
-        console.log(data, 'backend Data')
         const colors = await response.json();
         res.json({colors: colors.result, title: 'Generated Palette'});
     } catch (err) {
