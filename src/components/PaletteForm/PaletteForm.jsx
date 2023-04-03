@@ -122,6 +122,27 @@ export default function PaletteForm({ setActivePalette }) {
     return (
         <>
             <div className="PaletteForm-wholewrapper">
+                <div className='PaletteForm-menu-save-wrapper'>
+                <div className="PaletteForm-menu-save-lineup">
+                    <h3>View Saved:</h3>
+                    <Select
+                        className="palette-menu"
+                        options={options}
+                        value={{ value: palette._id, label: palette.title }}
+                        onChange={(evt) => setPalette(palettes.find(p => p._id === evt.value))}
+                        formatOptionLabel={formatOptionLabel}
+                    />
+                </div>
+                <div className="PaletteForm-menu-save-lineup">
+                    <h3>Save:</h3>
+                    <form onSubmit={handleSavePalette}>
+                        <input className="PaletteForm-input" type="text" placeholder="Name and Save Here" onChange={(evt) => setPalette({ ...palette, title: evt.target.value })} />
+                        <button className="PaletteForm-save" type="submit">
+                            <FontAwesomeIcon icon={faBookmark} />
+                        </button>
+                    </form>
+                </div>
+                </div>
                 <div className="PaletteForm-input-components">
                     {palette.colors.map((color, idx) => (
                         <div className="PaletteForm-PaletteList" key={idx} >
@@ -170,19 +191,6 @@ export default function PaletteForm({ setActivePalette }) {
                         <button className="generator-btn" onClick={() => generatePalette(lockedColors)}>
                             <FontAwesomeIcon className="faArrows" icon={faArrowsRotate} />
                         </button>
-                        <Select
-                            className="palette-menu"
-                            options={options}
-                            value={{ value: palette._id, label: palette.title }}
-                            onChange={(evt) => setPalette(palettes.find(p => p._id === evt.value))}
-                            formatOptionLabel={formatOptionLabel}
-                        />
-                        <form className="PaletteForm-paletteform" onSubmit={handleSavePalette}>
-                            <input className="PaletteForm-input" type="text" placeholder="Name and Save Here" onChange={(evt) => setPalette({ ...palette, title: evt.target.value })} />
-                            <button className="PaletteForm-save" type="submit">
-                                <FontAwesomeIcon icon={faBookmark} />
-                            </button>
-                        </form>
                     </div>
                 </div>
             </div >
