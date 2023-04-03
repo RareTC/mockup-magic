@@ -4,22 +4,15 @@ main.UIBasic-main {
     font-weight: 300;
     display: flex;
     flex-direction: column;
-    height: 00px;
 }
 
-div.UIBasic-header {
-    margin-top: 0;
-}
-
-div.UIBasic-header h1 {
+.UIBasic-header h1 {
     height: 80px;
     line-height: 80px;
     margin: 0;
-    padding-left: 10px;
-    margin-left: 5%;
 }
 
-div.UIBasic-header nav {
+.UIBasic-header nav {
     display: flex;
     justify-content: space-around;
     align-items: center;
@@ -27,92 +20,44 @@ div.UIBasic-header nav {
     vertical-align: center;
 }
 
-div.UIBasic-header li {
-    align-items: center;
-    justify-content: center;
-    margin-top: 28px;
-    padding-left: 10%;
-}
-
-div.UIBasic-header li a {
-    text-decoration: none;
-}
-
-div.UIBasic-navigation img {
+.UIBasic-navigation img {
     width: 30rem;
     height: 22rem;
     margin: 6px;
 }
 
-div.UIBasic-extra {
+.UIBasic-extra {
     display: flex;
-    padding: 0px;
     margin: auto;
-}
-
-div.UIBasic-extra #card {
-    width: 20rem;
-    height: 13rem;
-    margin: 5%;
-    padding: 5px;
-    border: 2px solid #292929;
-}
-
-div.UIBasic-extra .card button {
-    height: 50px;
-    width: 10rem;
-    color: #fff;
-    border: none;
-    position: absolute;
-    bottom: 4px;
-    border-radius: 10px;
-    margin: 20px;
-}
-
-div.UIBasic-footer p {
-    padding: 20px 10px;
-    text-align: center;
-}
-
-div.UIBasic-wrapper {
-    width: 60%;
-    margin-left: auto;
-    margin-right: auto;
-}
-
-div.UIBasic3-wrapper#content {
-    text-align: center;
-}
-
-div.UIBasic3-content h1 {
-    font-size: 50px;
-    font-weight: 800;
-}
-
-div.UIBasic-content button {
-    height: 50px;
-    width: 10rem;
-    color: #fff;
-    border: none;
-    border-radius: 10px;
-    margin: 20px;
-}
-
-div.UIBasic-navigation {
-    width: 100%;
-    display: flex;
-    justify-content: center;
-}
-
-div.UIBasic-extra {
-    display: flex;
     flex-wrap: wrap;
-    justify-content: center;
-    align-items: center;
-    width: 100%;
-    max-width: 1200px;
-    margin-top: 20px;
-  }
+    justify-content: space-around;
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+
+.UIBasic-footer {
+    padding: 10px 10px;
+    text-align: center;
+    margin-top: 5px;
+}
+
+.UIBasic-content {
+    margin-left: 40px;
+    margin-right: 40px;
+    border-radius: 10px;
+}
+
+.UIBasic-card {
+    border-radius: 10px;
+    box-shadow: rgba(0, 0, 0, 0.19) 0px 10px 20px, rgba(0, 0, 0, 0.23) 0px 6px 6px;
+}
+
+.UIBasic-content button {
+    height: 50px;
+    width: 10rem;
+    border-radius: 10px;
+    margin: 20px;
+}
 
 #UIBasic-logo {
     width: 300px;
