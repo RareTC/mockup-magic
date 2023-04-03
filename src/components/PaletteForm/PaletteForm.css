@@ -138,7 +138,6 @@
 
 .faArrows {
     filter: invert(88%) sepia(11%) saturate(582%) hue-rotate(158deg) brightness(84%) contrast(94%);
-    
 }
 
 .generator-btn {
@@ -151,6 +150,7 @@
     box-shadow: rgba(0, 0, 0, 0.19) 0px 10px 20px, rgba(0, 0, 0, 0.23) 0px 6px 6px;
     margin-bottom: 5px;
 }
+
 
 .generator-btn:hover {
     background: #a5c4d2;

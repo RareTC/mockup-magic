@@ -1,0 +1,33 @@
+.AuthPage-container {
+    background-image: url(https://cloudfour.com/wp-content/uploads/2019/10/circles-r2.png);
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    border-radius: 20px;
+    width: 700px;
+    height: 500px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin: auto;
+    margin-top: 7vmin;
+    box-shadow: rgba(0, 0, 0, 0.19) 0px 10px 20px, rgba(0, 0, 0, 0.23) 0px 6px 6px;
+}
+
+.AuthPage-login {
+    border-radius: 20px;
+    padding: 4px;
+    margin-bottom: 30px;
+    margin-top: 0;
+}
+
+.AuthPage-container button {
+    padding: 6px;
+    line-height: 16px;
+    border: solid 2px #697177;
+    background-color: #A5C4D2;
+    box-shadow: rgba(0, 0, 0, 0.19) 0px 10px 20px, rgba(0, 0, 0, 0.23) 0px 6px 6px;
+    border-radius: 10px;
+    margin-left: 5px;
+}
