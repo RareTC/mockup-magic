@@ -96,6 +96,15 @@ export default function PaletteForm({ setActivePalette }) {
         </div>
     );
 
+    const selectStyle = {
+        menu: (style) => ({
+          ...style,
+          backgroundColor: "#f6f9f6",
+          fontSize: "15px",
+          marginTop: "0",
+        }),
+      };
+
     function swapColors(idx1, idx2) {
         const paletteCopy = { ...palette };
         paletteCopy.title = 'New Palette';
@@ -131,6 +140,7 @@ export default function PaletteForm({ setActivePalette }) {
                         value={{ value: palette._id, label: palette.title }}
                         onChange={(evt) => setPalette(palettes.find(p => p._id === evt.value))}
                         formatOptionLabel={formatOptionLabel}
+                        styles={selectStyle}
                     />
                 </div>
                 <div className="PaletteForm-menu-save-lineup">

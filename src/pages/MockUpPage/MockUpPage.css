@@ -1,3 +1,8 @@
+.Mockup-menu-page {
+    margin-right: 20px;
+    margin-left: 20px;
+}
+
 .Mockup-menu {
     background-color: #697177;
     border: 1px solid #697177;
@@ -5,6 +10,10 @@
     font-size: 16px;
     padding: 2px;
     width: 210px;
+}
+.Mockup-menu:focus {
+    border: 1px solid #697177;
+    border-radius: 5px;
 }
 
 .Mockup-menu-container {

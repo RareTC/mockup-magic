@@ -39,6 +39,7 @@ export default function MockUpPage() {
 
   return (
     <>
+    <div className='Mockup-menu-page'>
       <PaletteForm setActivePalette={setActivePalette} />
       <div className='Mockup-menu-container'>
       <Select
@@ -51,6 +52,7 @@ export default function MockUpPage() {
       />
       </div>
       {mocks.find(m => m.title === activeMock).ui}
+    </div>
     </>
   )
 };
