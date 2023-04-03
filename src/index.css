@@ -1,17 +1,9 @@
-/* CSS Custom Properties */
-
 html,
 body {
     margin: 0;
-    padding: 0;
+    padding: 15px;
+    height: 100vh;
+    background-color: #f6f9f6;
+    background-size: cover;
+    background-repeat: no-repeat;
 }
-
-body {
-  margin: 10;
-  padding: 2vmin;
-  height: 100vh;
-  background-color: #f6f9f6;
-  background-size: cover;
-  background-repeat: no-repeat;
-}
-

@@ -13,7 +13,6 @@ export default function UIBasic3({ palette }) {
                 <a href="#">About</a>
                 <a href="#">Contact</a>
             </div>
-
             <div className="UIBasic3-content">
                 <div className="UIBasic3-card">
                     <img src="https://via.placeholder.com/350x250" alt="Food Item 1" />
@@ -31,7 +30,6 @@ export default function UIBasic3({ palette }) {
                     <p>Aliquallis lorem vehicula. Nullam ut diam semper, luctus tellus vel, maximus odio.</p>
                 </div>
             </div>
-
             <div className="UIBasic3-footer">
                 <p>&copy; 2023 Site Name</p>
             </div>
