@@ -202,20 +202,20 @@
 .PaletteForm-save {
     height: 20px;
     width: 30px;
-    border: none;
+    border: solid 1px #697177;
     border-radius: 10%;
     margin-left: 5px;
     padding-top: 4px;
     padding-bottom: 20px;
-    background-color:#697177;
-    color: #a5c4d2;
+    background-color:#a5c4d2;
+    color: #697177;
     text-align: center;
     box-shadow: rgba(0, 0, 0, 0.19) 0px 10px 20px, rgba(0, 0, 0, 0.23) 0px 6px 6px;
 }
 
 .PaletteForm-save:hover {
-    background: #a5c4d2;
-    border: solid 1px #a5c4d2;
+    background: #f6f9f6;
+    border: solid 1px #697177;
     border-radius: 20px;
     cursor: grab;
     box-shadow: rgba(50, 50, 93, 0.25) 0px 30px 60px -12px inset,
