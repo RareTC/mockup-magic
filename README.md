@@ -1,4 +1,4 @@
-# Market-Sense
+# Mockup Magic
 <div id="header" align="center">
    <a href="https://imgur.com/MfNihpK"><img src="https://i.imgur.com/MfNihpK.png" title="source: imgur.com" width="800" height="400"/></a>
 </div>
