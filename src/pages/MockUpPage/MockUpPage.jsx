@@ -20,7 +20,6 @@ export default function MockUpPage() {
 
   const [activeMock, setActiveMock] = useState(mocks[0].title);
 
-
   const options = mocks.map(m => ({
     value: m.title,
     label: m.title

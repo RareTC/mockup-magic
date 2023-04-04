@@ -29,22 +29,30 @@ export default function NavBar({ user, setUser }) {
         <ul className="link-ul">
           <li>
             <Link to="/">
+            {user ?
               <button>
                 <img className="NavBar-icons" src={home} alt="Palette Sample Icon" />
                 &nbsp;Home
               </button>
+            :
+            ''
+              }
             </Link>
           </li>
           <li>
             <Link to="/mockup">
+            { user ?
               <button>
                 <img className="NavBar-icons" src={palette} alt="Palette Sample Icon" />
                 &nbsp; Mockups
               </button>
+              : 
+              ''
+            }
             </Link>
           </li>
           <li className="user-ul">
-            <Link to="/authpage" onClick={handleLogOut}>
+            <Link to="/" onClick={handleLogOut}>
             { user ?
               <button>
                 <img className="NavBar-icons" src={logout} alt="Palette Sample Icon" />
