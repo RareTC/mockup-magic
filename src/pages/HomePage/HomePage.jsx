@@ -17,6 +17,7 @@ export default function HomePage({ user, setShowAuth, isAuth }) {
                                 to see random palettes applied to a demo wireframe. <br />
                                 For best results try locking in the main (middle) color and generating the rest of the palette.
                             </h4>
+                            <h5>Example Below: </h5>
                         </div>
                         <div className='HomePage-palette-demo'>
                             <div className='HomePage-explained'>
@@ -48,10 +49,10 @@ export default function HomePage({ user, setShowAuth, isAuth }) {
                         <h4>
                             {isAuth &&
                                 <button id='HomePage-login' onClick={() => setShowAuth(true)}>
-                                    Login
+                                    Get Started
                                 </button>
-                            }
-                            to see random palettes applied to demo wireframes. <br />
+                                
+                            } to see random palettes applied to demo wireframes. <br />
                         </h4>
                         <div className='HomePage-palette-demo'>
                             <div className='HomePage-explained'>

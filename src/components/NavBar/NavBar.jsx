@@ -1,7 +1,7 @@
 import logo from '../../assets/images/mmLogo.png';
 import palette from '../../assets/images/palette.png'
 import logout from '../../assets/images/logout.png'
-import login from '../../assets/images/login.png'
+// import login from '../../assets/images/login.png'
 import home from '../../assets/images/home.png'
 import "./NavBar.css";
 import { Link } from 'react-router-dom';

@@ -184,6 +184,7 @@
     background-color:#697177;
     padding: 1px;
     border: solid 2px #697177;
+    box-shadow: rgba(0, 0, 0, 0.19) 0px 10px 20px, rgba(0, 0, 0, 0.23) 0px 6px 6px;
 }
 
 .PaletteForm-input {
@@ -191,11 +192,11 @@
     width: 130px;
     border-radius: 20px;
     padding: 10px;
-    /* background-color: #A5C4D2; */
     color: #697177;
     text-align: center;
     margin-left: 50px;
     border: solid 2px #697177;
+    box-shadow: rgba(0, 0, 0, 0.19) 0px 10px 20px, rgba(0, 0, 0, 0.23) 0px 6px 6px;
     animation-name: borderblink;
     animation-duration: 1s;
     animation-iteration-count: infinite;
