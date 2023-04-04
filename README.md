@@ -30,8 +30,8 @@ Mockup Magic is a Single Page Application  designed to take the headache out of 
 | <h3>Sign Up</h3> | <a href="https://imgur.com/NOBuW3R"><img src="https://i.imgur.com/NOBuW3R.png" title="source: imgur.com" width="700"/></a>
 | <h3>Homescreen</h3> | <a href="https://imgur.com/bxCmWY8"><img src="https://i.imgur.com/bxCmWY8.png" title="source: imgur.com" width="700"/></a>
 | <h3 align="center">Palette & Wireframe</h3> | <a href="https://imgur.com/mQLIHR9"><img src="https://i.imgur.com/mQLIHR9.png" title="source: imgur.com" width="700"/></a>
-| <h3 align="center">Example Component</h3> |<a href="https://imgur.com/N7FltTd"><img src="https://i.imgur.com/N7FltTd.png" title="source: imgur.com" width="700"/></a>
-
+| <h3 align="center">Example Component</h3> |<a href="https://imgur.com/N7FltTd"><img src="https://i.imgur.com/N7FltTd.png" title="source: imgur.com" width="700" height="500"/></a>
+| <h3 align="center">Specify and lock colors</h3> |<a href="https://imgur.com/gvV1gsz"><img src="https://i.imgur.com/gvV1gsz.png" title="source: imgur.com" width="700" /></a>
 
  ## :computer: Technologies 
  
@@ -64,6 +64,8 @@ Mockup Magic is a Single Page Application  designed to take the headache out of 
 
 
   ## :eyes: Upcoming Features
+
+- [:x:] Create theme list for palettes based on themes.
 
 - [:x:] Make Palettes shareable to social media.
 
