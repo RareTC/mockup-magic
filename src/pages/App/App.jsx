@@ -25,7 +25,9 @@ export default function App() {
             </Routes>
           </>
           :
-          <AuthPage setUser={setUser} />
+          <Routes>
+            <Route path="/" element={<AuthPage setUser={setUser} />} />
+          </Routes>
         }
         <Footer />
     </main>

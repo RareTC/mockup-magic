@@ -9,22 +9,23 @@ export default function AuthPage({ setUser }) {
   const [showAuth, setShowAuth] = useState(false);
 
   return (
-   <> {!showAuth ? 
+    <> {!showAuth ?
       <>
-      <HomePage showAuth={showAuth} setShowAuth={setShowAuth} isAuth={true} />
-       </>
-       :
-    <main className='AuthPage-container'>
-    <>
-    <h1 className='AuthPage-login'>Log In Below </h1>
-    { showSignUp ?
-      <SignUpForm setUser={setUser} />
+        <HomePage showAuth={showAuth} setShowAuth={setShowAuth} isAuth={true} />
+      </>
       :
-      <LoginForm setUser={setUser} />
-    } 
+      <main className='AuthPage-container'>
+        <>
+          <h1 className='AuthPage-login'>Log In Below </h1>
+          {showSignUp ?
+            <SignUpForm setUser={setUser} />
+            :
+            <LoginForm setUser={setUser} />
+          }
+        </>
+        <button onClick={() => setShowSignUp(!showSignUp)}>{showSignUp ? 'Log In' : 'Sign Up'}</button>
+      </main>
+    }
     </>
-    <button onClick={() => setShowSignUp(!showSignUp)}>{showSignUp ? 'Log In' : 'Sign Up'}</button>
-    </main>
-  }</>
   );
 }

@@ -13,6 +13,7 @@ export default function NavBar({ user, setUser }) {
     setUser(null);
   }
 
+
   return (
     <nav className="navbar" id='navbar'>
       <Link to="/">
@@ -50,10 +51,11 @@ export default function NavBar({ user, setUser }) {
                 &nbsp; Log Out
               </button>
               :
-              <button>
-                <img className="NavBar-icons" src={login} alt="Palette Sample Icon" />
-                &nbsp; Log In
-              </button>
+              // <button>
+              //   <img className="NavBar-icons" src={login} alt="Palette Sample Icon" />
+              //   &nbsp; Log In
+              // </button>
+              ''
                 }
             </Link>
           </li>
