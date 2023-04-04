@@ -12,7 +12,7 @@ import Select from 'react-select';
 
 const defaultPalette = {
     _id: 'defaultid',
-    title: 'default',
+    title: 'Default',
     colors: [
         '#2233a4',
         '#38aba2',
@@ -34,12 +34,12 @@ export default function PaletteForm({ setActivePalette }) {
 
     useEffect(() => {
         async function getPalettes() {
-            const palettes = await palettesAPI.getAllForUser();
-            setPalettes(palettes);
-            if (palettes.length) setPalette(palettes[0]);
+          const palettes = await palettesAPI.getAllForUser();
+          setPalettes(palettes);
         }
         getPalettes();
-    }, []);
+        setPalette(defaultPalette);
+      }, []);
 
     async function generatePalette(lockedColors) {
         const lockedColorsArr = Object.values(lockedColors);
