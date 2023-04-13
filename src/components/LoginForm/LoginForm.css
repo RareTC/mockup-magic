@@ -46,3 +46,10 @@
     border: solid 2px #A5C4D2;
     background-color: #f6f9f6;
 }
+
+@media only screen and (max-width: 750px) {
+    .Login-form-container form {
+        display: flex;
+        flex-direction: column;
+    }
+}

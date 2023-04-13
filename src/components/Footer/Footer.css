@@ -10,13 +10,13 @@
 }
 
 .linkedIn {
-    width: 100px;
+    width: 80px;
     margin-left: 20px;
     filter: invert(45%) sepia(38%) saturate(325%) hue-rotate(163deg) brightness(145%) contrast(86%);
 }
 
 .git {
-    width: 100px;
+    width: 80px;
     margin-right: 20px;
     filter: invert(87%) sepia(16%) saturate(402%) hue-rotate(158deg) brightness(89%) contrast(94%);
 }
