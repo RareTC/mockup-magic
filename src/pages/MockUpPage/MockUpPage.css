@@ -1,6 +1,7 @@
 .Mockup-menu-page {
     margin-right: 10px;
     margin-left: 10px;
+    padding-bottom: 90px;
 }
 
 .Mockup-menu {
@@ -23,3 +24,9 @@
     margin-top: 0px;
     margin-bottom: 7px;
 }
+
+@media only screen and (max-width: 600px) {
+    .Mockup-menu-page {
+        margin-left: 20px;
+    }
+} 

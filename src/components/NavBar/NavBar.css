@@ -9,12 +9,13 @@
 }
 
 .NavBar-userinfo {
-    margin-right: 170px;
     color: #697177;
+    position: absolute;
+    left: 32%;
 }
 
 .logo {
-    width: 200px;
+    width: 14vmax;
     margin-left: 25px;
     filter: invert(87%) sepia(16%) saturate(402%) hue-rotate(158deg) brightness(89%) contrast(94%);
 }
@@ -67,4 +68,35 @@ nav button:hover {
     height: 20px;
     width: 20px;
     filter: invert(48%) sepia(8%) saturate(401%) hue-rotate(163deg) brightness(89%) contrast(92%);
+}
+
+@media only screen and (max-width:675px) {
+    .logo {
+        width: 13vmax;
+        height: 3vmax;
+        margin-left: 5px;
+    }
+
+    .NavBar-userinfo {
+        font-size: 14px;
+    }
+
+    .userFeatureNav {
+        display: flex;
+        flex-direction: row-reverse;
+        position: absolute;
+        top: 23px;
+        right: 1px;
+    }
+
+    .NavBar-icons {
+        height: 10px;
+        width:10px;
+    }
+
+    nav button {
+        font-size: 10px;
+    }
+
+    
 }

@@ -57,24 +57,24 @@ export default function HomePage({ user, setShowAuth, isAuth }) {
                         <div className='HomePage-palette-demo'>
                             <div className='HomePage-explained'>
                                 <div className='HomePage-color1'></div>
-                                <p>Lighter Shade : Background for dark on light. </p>
+                                <p className='HomePageP'>Lighter Shade : Background for dark on light. </p>
                             </div>
                             <div className='HomePage-explained'>
                                 <div className='HomePage-color2'></div>
-                                <p>Light Accent : Accent to draw attention. </p>
+                                <p className='HomePageP'>Light Accent : Accent to draw attention. </p>
                             </div>
                             <div className='HomePage-explained'>
                                 <div className='HomePage-color3'></div>
-                                <p>Main Color : Use liberally as your main color.</p>
+                                <p className='HomePageP'>Main Color : Use liberally as your main color.</p>
                             </div>
                             <div className='HomePage-explained'>
                                 <div className='HomePage-color4'>
                                 </div>
-                                <p>Darker Accent : Another accent in your arsenal. </p>
+                                <p className='HomePageP'>Darker Accent : Another accent color. </p>
                             </div>
                             <div className='HomePage-explained'>
                                 <div className='HomePage-color5'></div>
-                                <p>Darker Shade: Use as background for light on dark.</p>
+                                <p className='HomePageP'>Darker Shade: Background for light on dark.</p>
                             </div>
                         </div>
                     </>
