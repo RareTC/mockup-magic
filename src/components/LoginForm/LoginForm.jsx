@@ -4,8 +4,8 @@ import './LoginForm.css';
 
 export default function LoginForm({ setUser }) {
   const [credentials, setCredentials] = useState({
-    email: '',
-    password: ''
+    email: 'demo@demo.com',
+    password: 'demo'
   });
   const [error, setError] = useState('');
 
@@ -32,9 +32,9 @@ export default function LoginForm({ setUser }) {
     <div>
       <div className="Login-form-container">
         <form autoComplete="off" onSubmit={handleSubmit}>
-          <label>Email</label>
+          <label>Email - or use Demo Acc</label>
           <input type="text" name="email" value={credentials.email} onChange={handleChange} required />
-          <label>Password</label>
+          <label>Password - or use Demo Acc</label>
           <input type="password" name="password" value={credentials.password} onChange={handleChange} required />
           <button type="submit">LOG IN</button>
         </form>
