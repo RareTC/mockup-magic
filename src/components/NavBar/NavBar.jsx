@@ -28,7 +28,7 @@ export default function NavBar({ user, setUser }) {
       <div className="userFeatureNav">
         <ul className="link-ul">
           <li>
-            <Link to="/">
+            <Link to="/home">
             {user ?
               <button>
                 <img className="NavBar-icons" src={home} alt="Palette Sample Icon" />
@@ -40,7 +40,7 @@ export default function NavBar({ user, setUser }) {
             </Link>
           </li>
           <li>
-            <Link to="/mockup">
+            <Link to="/">
             { user ?
               <button>
                 <img className="NavBar-icons" src={palette} alt="Palette Sample Icon" />
