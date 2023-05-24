@@ -123,6 +123,10 @@
     align-items: center;
 }
 
+.palette-generator:hover {
+    cursor: pointer;
+}
+
 .palette-generator {
     height: 110px;
     width: 160px;
