@@ -5,6 +5,7 @@ import UIBasic from '../../mocks/UIBasic/UIBasic';
 import UIBasic2 from '../../mocks/UIBasic2/UIBasic2';
 import UIBasic3 from '../../mocks/UIBasic3/UIBasic3';
 import Gradients from '../../mocks/Gradients/Gradients';
+import Buttons from '../../mocks/Buttons/Buttons';
 import Select from 'react-select';
 
 
@@ -16,6 +17,7 @@ export default function MockUpPage() {
     { title: 'Blog Layout', ui: activePalette && <UIBasic2 palette={activePalette} /> },
     { title: 'Card Layout', ui: activePalette && <UIBasic3 palette={activePalette} /> },
     { title: 'Background Gradient', ui: activePalette && <Gradients palette={activePalette} /> },
+    { title: 'Buttons', ui: activePalette && <Buttons palette={activePalette} /> },
   ];
 
   const [activeMock, setActiveMock] = useState(mocks[0].title);
