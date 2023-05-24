@@ -15,7 +15,7 @@
 }
 
 .logo {
-    width: 14vmax;
+    width: 230px;
     margin-left: 25px;
     filter: invert(87%) sepia(16%) saturate(402%) hue-rotate(158deg) brightness(89%) contrast(94%);
 }
@@ -70,14 +70,22 @@ nav button:hover {
     filter: invert(48%) sepia(8%) saturate(401%) hue-rotate(163deg) brightness(89%) contrast(92%);
 }
 
+@media only screen and (max-width:1150px) {
+    .logo {
+        width: 150px;
+    }
+}
+
 @media only screen and (max-width:675px) {
     .logo {
-        width: 13vmax;
-        height: 3vmax;
+        width: 75px;
         margin-left: 5px;
     }
 
     .NavBar-userinfo {
+        position: absolute;
+        top: 0;
+        left: 50%;
         font-size: 14px;
     }
 

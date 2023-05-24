@@ -11,7 +11,7 @@ export default function UIBasic({ palette }) {
             <div className="UIBasic-container" style={{background: c0}}>
                 <div className="UIBasic-header" style={{background: c2}}>
                     <nav>
-                        <h1>Mockup 3</h1>
+                        <h1>Mockup</h1>
                         <h1>Home</h1>
                         <h1>About</h1>
                         <h1>Login</h1>
